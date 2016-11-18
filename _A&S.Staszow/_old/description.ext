@@ -1,0 +1,249 @@
+loadScreen = "\ca\ui\data\loadscreen_test_d_co.paa";
+onLoadMission="=BTC= co 21 Advance & Secure       By Giallustio";
+onLoadIntroTime=false;
+onLoadMissionTime=false;
+disabledAI=1;
+debriefing=1;
+showGPS=1;
+Respawn = "BASE";
+RespawnDelay = 4;
+RespawnDialog = 0;
+
+class Header
+{
+	gameType = COOP;
+	minPlayers = 1;
+	maxPlayers = 31;
+};
+
+#include "=BTC=_dialogs\=BTC=_defines.h"
+#include "=BTC=_Logistic\=BTC=_Lift\=BTC=_Hud.h"
+#include "R3F_revive\dlg_attente_reanimation.h"
+#include "=BTC=_dialogs\=BTC=_rally_point.h"
+#include "=BTC=_dialogs\=BTC=_arty.h"
+#include "=BTC=_dialogs\=BTC=_AI.h"
+#include "=BTC=_dialogs\=BTC=_view_distance.h"
+
+class Params
+{
+	class Month 
+	{ 	
+	// paramsArray[0]
+		title="Month"; 
+		values[]={1,2,3,4,5,6,7,8,9,10,11,12}; 
+		texts[]={"January","Febuary", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"}; 
+		default = 7; 
+	}; 
+	class Day 
+	{
+	// paramsArray[1]
+		title="Day"; 
+		values[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31}; 
+		texts[]={"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31"}; 
+		default = 24; 
+	}; 
+	class Hour 
+	{
+	// paramsArray[2]
+		title="Hour"; 
+		values[]={1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24}; 
+		texts[]={"1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24"}; 
+		default = 12; 
+	};
+	class Minute
+	{ 
+	// paramsArray[3]
+		title="Minute"; 
+		values[]={00,15,30,45}; 
+		texts[]={"00","15","30","45"}; 
+		default = 00; 
+	};
+    class AI_Skill
+    {
+	// paramsArray[4]
+        title = "AI Accuracy?";
+        values[] = {1,2,3,4,5,6,7,8,9,10};
+        texts[] = {"0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1"};
+        default = 2;
+    };
+    class View_distance
+    {
+	//paramsArray[5]
+        title = "View Distance";
+        values[] = {500, 1000, 2000, 3000, 4000, 5000, 6000, 7000};
+        texts[] = {"500", "1000", "2000", "3000", "4000", "5000", "6000", "7000"};
+        default = 3000;
+	};
+    class Terrain_grid
+    {
+	//paramsArray[6]
+        title = "Terrain details";
+        values[] = {50, 25, 12.5, 6.25, 3.125};
+        texts[] = {"Smooth", "Multiplayer", "Singleplayer", "High", "Bumpiest"};
+        default = 50;
+	};
+    class Type_units
+    {
+	// paramsArray[7]
+        title = "Type units?";
+        values[] = {0,1,2,3,4,5};
+        texts[] = {"Chedaki","Lingor Units","Molatian","RU","TK army","TK Militia"};
+        default = 4;
+    };
+    class Units_ratio
+    {
+	// paramsArray[8]
+        title = "Units numbers?";
+        values[] = {0,1,2,3};
+        texts[] = {"Balanced","Low","Medium","High"};
+        default = 0;
+    };
+    class BTC_game_mode
+    {
+	//paramsArray[9]
+        title = "Game mode?";
+        values[] = {0, 1};
+        texts[] = {"A&S classic", "A&S random first location"};
+        default = 0;
+	};	
+    class BTC_base_location
+    {
+	//paramsArray[10]
+        title = "Start location?";
+        values[] = {0, 1, 2, 3, 4, 5, 100};
+        texts[] = {"Chaman", "Loy Manara Airport", "Rasman Airport", "Nur", "West of Tumurkalay", "Par-e Siah Oilfield", "Random"};
+        default = 100;
+	};
+	class BTC_enemy_player
+    {
+	//paramsArray[11]
+        title = "Enemy player?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_arty
+    {
+	//paramsArray[12]
+        title = "Enemy artillery?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_player_arty
+    {
+	//paramsArray[13]
+        title = "Player artillery?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_rinf
+    {
+	//paramsArray[14]
+        title = "Enemy reinforcement?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+	class Marker
+    {
+	//paramsArray[15]
+        title = "Show players markers";
+        values[] = {0, 1, 2};
+        texts[] = {"No", "Only Squad Leader", "All players"};
+        default = 2;
+	};
+	class Revive
+    {
+	//paramsArray[16]
+        title = "Type of revive?";
+        values[] = {0, 1, 2, 3};
+        texts[] = {"No revive", "Bon_inf injured system", "R3F revive", "ACE wounding system"};
+        default = 2;
+	};
+    class Life_time
+    {
+	//paramsArray[17]
+        title = "ACE life time";
+        values[] = {0, 30, 60, 120, 150, 180, 210, 240, 300, 600};
+        texts[] = {"0", "30", "60", "120", "150", "180", "210", "240", "300", "600"};
+        default = 300;
+	};
+	class Rally_point
+    {
+	//paramsArray[18]
+        title = "Rally point?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 0;
+	};	
+    class BTC_money
+    {
+	//paramsArray[19]
+        title = "Founds:";
+        values[] = {0, 5000, 10000, 15000, 20000, 25000, 30000, 900000};
+        texts[] = {"0", "5000", "10000", "15000", "20000", "25000", "30000", "900000"};
+        default = 15000;
+	};
+    class BTC_civ
+    {
+	//paramsArray[20]
+        title = "Civilian?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_ied
+    {
+	//paramsArray[21]
+        title = "IED?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_logistic
+    {
+	//paramsArray[22]
+        title = "=BTC= Logistic?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_UAV
+    {
+	//paramsArray[23]
+        title = "UAV terminal?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 0;
+	};
+    class BTC_recruitment
+    {
+	//paramsArray[24]
+        title = "AI recruitment?";
+        values[] = {0, 1, 2};
+        texts[] = {"No", "Only SL", "All TLs"};
+        default = 1;
+	};
+    class BTC_loading
+    {
+	//paramsArray[25]
+        title = "Load game? (if available)";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 0;
+	};
+    class Debug
+    {
+	//paramsArray[26]
+        title = "Debug Mode";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 0;
+	};
+};
+class Extended_PreInit_EventHandlers 
+{
+   class mission_name {serverInit = "if ((paramsArray select 16) == 3 && isClass(configFile >> 'cfgPatches' >> 'ace_main')) then {ace_sys_wounds_enabled = true;publicVariable 'ace_sys_wounds_enabled';ace_sys_wounds_no_medical_gear = true;publicVariable 'ace_sys_wounds_enabled';ace_sys_wounds_noai = true;ace_sys_eject_fnc_weaponcheck = {};ace_sys_wounds_no_rpunish = true;publicVariable 'ace_sys_wounds_no_rpunish';ace_sys_wounds_all_medics = true;publicVariable 'ace_sys_wounds_all_medics';ace_sys_wounds_leftdam = 0;publicVariable 'ace_sys_wounds_leftdam';ace_wounds_prevtime = (paramsArray select 17);publicVariable 'ace_wounds_prevtime';};";};
+};
