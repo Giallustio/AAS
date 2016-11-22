@@ -12,9 +12,9 @@ _radiusy = _loc getVariable ["RadiusY",50];
 //Spawn units
 
 
-_marker = [str (position _loc), position _loc,[1,1],"ICON","mil_Flag","","ColorRed",""] call btc_fnc_misc_createMarker;
+_marker = [str (position _loc), position _loc,[1,1],"ICON","mil_Flag","","ColorRed",""] call btc_fnc_createMarker;
 
-_check = [position _loc, [_radiusx,_radiusy,0,false], [str (btc_enemy_side), "PRESENT", false], ["count thisList < 2", "[] call btc_fnc_mission_locationCaptured", ""]] call btc_fnc_misc_createTrigger;
+_check = [position _loc, [_radiusx,_radiusy,0,false], [str (btc_enemy_side), "PRESENT", false], ["count thisList < 2", "[] call btc_fnc_mission_locationCaptured", ""]] call btc_fnc_createTrigger;
 
 
 btc_loc_active = _loc;

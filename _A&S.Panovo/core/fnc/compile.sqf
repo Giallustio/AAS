@@ -4,9 +4,10 @@ if (isServer) then {
 	//btc_fnc_ai_find_pos = compile preprocessFile "core\fnc\ai\find_pos.sqf";
 
 	//MISC
-	btc_fnc_misc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
-	btc_fnc_misc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
-	btc_fnc_misc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
+	btc_fnc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
+	btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
+	btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
+	btc_fnc_randomizePos = compile preprocessFile "core\fnc\misc\randomizePos.sqf";
 
 	//MISSION
 	btc_fnc_mission_assignLocation = compile preprocessFile "core\fnc\mission\assignLocation.sqf";
