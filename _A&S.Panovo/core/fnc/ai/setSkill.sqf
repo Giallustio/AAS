@@ -1,5 +1,5 @@
 
-if (typeName _this == "OBJECT") then {_this = [_this];} else {_this = units _this;};
+if (typeName _this isEqualTo "OBJECT") then {_this = [_this];} else {_this = units _this;};
 
 {
 	_x setskill ["general",(btc_AI_skill select 0)];

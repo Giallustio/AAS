@@ -15,7 +15,7 @@ switch (typeName _zone_array) do {
 };
 
 _n = 0;
-if (_random_n == 1) then {_n = round (random _n_units);} else {_n = _n_units - 1};
+if (_random_n == 0) then {_n = round (random _n_units);} else {_n = _n_units - 1};
 
 _group = createGroup _side;
 _group createUnit [BTC_type_TL, _zone, [], 0, "NONE"];
@@ -27,6 +27,7 @@ for "_i" from 0 to _n do {
 _group createUnit [BTC_type_medic, _zone, [], 0, "NONE"];
 
 //SetAI
+_group call btc_fnc_ai_setSkill;
 
 _wp_type = selectRandom _wps_type;
 
