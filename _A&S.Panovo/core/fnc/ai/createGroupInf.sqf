@@ -18,23 +18,22 @@ _n = 0;
 if (_random_n) then {_n = round (random _n_units);} else {_n = _n_units - 1};
 
 _group = createGroup _side;
-_group createUnit [BTC_type_TL, _spawn_zone, [], 0, "NONE"];
+_group createUnit [btc_type_TL, _spawn_zone, [], 0, "NONE"];
 for "_i" from 0 to _n do {
 	private "_unit_type";
-	_unit_type = selectRandom BTC_type_units;
+	_unit_type = selectRandom btc_type_units;
 	_group createUnit [_unit_type, _spawn_zone, [], 0, "NONE"];
 };
 
-_group createUnit [BTC_type_medic, _spawn_zone, [], 0, "NONE"];
+_group createUnit [btc_type_medic, _spawn_zone, [], 0, "NONE"];
 
-//SetAI
 _group call btc_fnc_ai_setSkill;
 
 _wp_type = selectRandom _wps_type;
 
 switch (_wp_type) do {
 	case "PATROL" : {
-		[_group, _spawn_zone, _r_patrol] spawn BTC_task_patrol;
+		[_group, _spawn_zone, _r_patrol] spawn btc_fnc_ai_taskPatrol;
 	};
 	case "GUARD": {
 		_wp = _group addWaypoint [_spawn_zone, 0];
@@ -44,7 +43,7 @@ switch (_wp_type) do {
 		_wp setWaypointSpeed "FULL";		
 	};
 	case "SENTRY": {
-		_wp = _group addWaypoint [_newZone, 0];
+		_wp = _group addWaypoint [_spawn_zone, 0];
 		_wp setWaypointType "SENTRY";
 		_wp setWaypointCombatMode "RED";
 		_wp setWaypointBehaviour "AWARE";

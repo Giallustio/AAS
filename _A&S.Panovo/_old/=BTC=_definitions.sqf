@@ -71,8 +71,8 @@ BTC_player_side        = west;
 BTC_enemy_side         = east;
 BTC_marker_respawn     = format ["respawn_%1",BTC_player_side];
 BTC_marker_respawn_en  = format ["respawn_%1",BTC_enemy_side];
-BTC_enemy_veh_ratio    = 4;
-BTC_enemy_fant_ratio   = 2;
+btc_enemy_ratio_veh    = 4;
+btc_enemy_ratio_fant   = 2;
 BTC_city_bonus         = 500;
 BTC_loc_blacklist      = [];
 //Var

@@ -1,5 +1,5 @@
 
-private ["_name","_pos","_area","_shape","_type","_marker"];
+private ["_name","_pos","_area","_shape","_type","_marker","_alpha"];
 
 _name   = _this select 0;
 _pos    = _this select 1;
@@ -9,6 +9,7 @@ _type   = _this select 4;
 _brush  = _this select 5;
 _color  = _this select 6;
 _text   = _this select 7;
+_alpha  = _this select 8;
 	
 _marker = createMarkerLocal [_name, _pos];
 _name setMarkerSizeLocal _area;
@@ -17,4 +18,4 @@ _name setMarkerTypeLocal _type;
 if (_brush != "") then {_name setMarkerBrushLocal  _brush;};
 _name setMarkerColorLocal _color;
 _name setMarkerTextLocal _text;
-if (count _this > 8) then {_name setMarkerAlphaLocal (_this select 8);};
+_name setMarkerAlphaLocal _alpha;

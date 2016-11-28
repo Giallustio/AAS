@@ -136,7 +136,7 @@ BTC_city_patrols =
 	_spawn = [BTC_enemy_side,_loc_pos,_players] spawn BTC_spawn_defender_groups;
 	if (BTC_enemy == 0) then 
 	{
-		_fant    = (_players * BTC_enemy_fant_ratio) + (round (random 2));
+		_fant    = (_players * btc_enemy_ratio_fant) + (round (random 2));
 		if (_fant > 12) then {_fant = 12;};
 	}
 	else
@@ -151,7 +151,7 @@ BTC_city_patrols =
 	};
 	if (BTC_enemy == 0) then 
 	{
-		_veh = round (_players / BTC_enemy_veh_ratio);
+		_veh = round (_players / btc_enemy_ratio_veh);
 		if (_veh > 4) then {_veh = 4;};
 		if (_veh != 0) then {_veh = _veh - 1};
 		if (_players < 8) then 

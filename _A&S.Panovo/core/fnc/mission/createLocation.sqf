@@ -26,7 +26,7 @@ if (btc_debug) then	{//_debug
 	_marker = createmarker [format ["loc_%1",_id],_position];
 	_marker setMarkerShape "ELLIPSE";
 	_marker setMarkerBrush "SolidBorder";
-	_marker setMarkerSize [(_radius_x+_radius_y) + btc_city_radius, (_radius_x+_radius_y) + btc_city_radius];
+	_marker setMarkerSize [(_radius_x+_radius_y) + btc_loc_radius, (_radius_x+_radius_y) + btc_loc_radius];
 	_marker setMarkerAlpha 0.3;
 	_marker setmarkercolor "colorRed";
 	_marker = createmarker [format ["locn_%1",_id],_position];

@@ -15,10 +15,10 @@ btc_version = 0.1;
 	btc_view_distance   = (paramsArray select 5);
 	btc_terrain         = (paramsArray select 6);
 	_type_units_n    = (paramsArray select 7);
-	btc_enemy           = (paramsArray select 8);
+	btc_enemy_ratio     = (paramsArray select 8);
 	btc_game_mode       = (paramsArray select 9);
 	btc_base_location   = (paramsArray select 10);
-	btc_enemy_player    = (paramsArray select 11);
+	btc_enemy_ratio_player    = (paramsArray select 11);
 	btc_arty            = (paramsArray select 12);
 	btc_arty_player_def = (paramsArray select 13);
 	btc_rinf            = (paramsArray select 14);
@@ -35,9 +35,12 @@ btc_version = 0.1;
 	btc_debug           = (paramsArray select 26);
 */
 
+btc_enemy_ratio = 0;
+btc_infantry_only = false;
+
 btc_debug = true;
 _type_units_n = 0;
-btc_city_radius = 100;
+btc_loc_radius = 150;
 /*
 btc_AI_skill = [
 	(paramsArray select 16)/10,//general
@@ -69,8 +72,8 @@ btc_player_side        = west;
 btc_enemy_side         = east;
 btc_marker_respawn     = format ["respawn_%1",btc_player_side];
 btc_marker_respawn_en  = format ["respawn_%1",btc_enemy_side];
-btc_enemy_veh_ratio    = 4;
-btc_enemy_fant_ratio   = 2;
+btc_enemy_ratio_veh    = 4;
+btc_enemy_ratio_fant   = 2;
 btc_city_bonus         = 500;
 btc_loc_blacklist      = [];
 //Var
@@ -100,7 +103,7 @@ btc_arty_player_reload_time = 300;
 btc_arty_player_reloading   = 0;
 btc_arty_player_x           = 0;
 btc_arty_player_y           = 0;
-btc_enemy_men             = "SoldierEB";
+btc_enemy_ratio_men             = "SoldierEB";
 btc_friendly_men          = "SoldierWB";
 btc_flag_marker_type      = "Faction_NATO_EP1";
 btc_type_rally_point      = "Misc_Backpackheap_EP1";
@@ -116,10 +119,9 @@ switch (_type_units_n) do
 		btc_type_pilots           = "LIB_SOV_rifleman";
 		btc_type_medic            = "LIB_SOV_medic";
 		btc_type_sniper           = "LIB_SOV_scout_sniper";
-		btc_type_para             = ["Ins_Soldier_1","Ins_Soldier_2","Ins_Soldier_GL","Ins_Soldier_MG","Ins_Soldier_Medic","Ins_Soldier_AT","Ins_Soldier_Sab","Ins_Soldier_AR"];
-		btc_type_vehicles         = ["LIB_T34_76","LIB_T34_85","BRDM2_INS","BRDM2_ATGM_INS","T72_INS","ZSU_INS","UAZ_MG_INS","UAZ_SPG9_INS","UAZ_AGS30_INS"];
+		//btc_type_para             = ["Ins_Soldier_1","Ins_Soldier_2","Ins_Soldier_GL","Ins_Soldier_MG","Ins_Soldier_Medic","Ins_Soldier_AT","Ins_Soldier_Sab","Ins_Soldier_AR"];
+		btc_type_tanks            = ["LIB_T34_76","LIB_T34_85"];
+		btc_type_apc              = ["LIB_zis5v","LIB_Scout_M3","LIB_Scout_FFV","LIB_US6_Open"];
 		btc_type_motorized        = ["LIB_zis5v","LIB_Scout_M3","LIB_Scout_FFV","LIB_US6_Open"];
-		btc_type_heli             = ["Mi24_V"];
-		btc_type_heli_transport   = ["Mi24_P","Mi17_Ins"];
 	};
 };

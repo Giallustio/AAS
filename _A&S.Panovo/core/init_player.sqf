@@ -77,5 +77,6 @@ if (side player != BTC_player_side) then
 		};
 	};
 };
+*/
 //Debug
-if (BTC_debug == 1) then {player allowDamage false;onMapSingleClick "player setpos _pos";_marker = [] spawn BTC_marker_debug;{_marker = createmarkerLocal [format ["%1", _x], position _x];format ["%1", _x] setmarkertypelocal "Dot";} foreach BTC_locations};
+if (btc_debug) then {player allowDamage false;onMapSingleClick "player setpos _pos";btc_marker_debug_cond = true;_marker = [] spawn btc_fnc_markerDebug;};

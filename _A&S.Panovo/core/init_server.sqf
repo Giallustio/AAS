@@ -47,7 +47,7 @@ if (isNil "BTC_can_load_game" || BTC_load == 0) then
 BTC_coin_module setPos BTC_start_location_selected;
 //Create base at start location
 if (isNil "BTC_can_load_game" || BTC_load == 0) then {[BTC_start_location_selected, BTC_base_on_load] call BTC_spawn_base;} else {[BTC_start_location_selected, BTC_base_on_load] call BTC_spawn_base;};
-_check = [BTC_start_location_selected, [100,100,0,false], [str (BTC_enemy_side), "PRESENT", true], ["this", "{_x setDamage 1;} foreach thisList", ""]] spawn BTC_create_trigger;
+_check = [BTC_start_location_selected, [100,100,0,false], [str (btc_enemy_side), "PRESENT", true], ["this", "{_x setDamage 1;} foreach thisList", ""]] spawn BTC_create_trigger;
 */
 
 

@@ -44,7 +44,7 @@ for "_i" from 0 to (count _locations - 1) do {
 			_marker = createmarker [format ["loc_%1",_id],_position];
 			_marker setMarkerShape "ELLIPSE";
 			_marker setMarkerBrush "SolidBorder";
-			_marker setMarkerSize [(_radius_x+_radius_y) + btc_city_radius, (_radius_x+_radius_y) + btc_city_radius];
+			_marker setMarkerSize [(_radius_x+_radius_y) + btc_loc_radius, (_radius_x+_radius_y) + btc_loc_radius];
 			_marker setMarkerAlpha 0.3;
 			//_marker setmarkertype "mil_dot";
 			_marker setmarkercolor "colorRed";
