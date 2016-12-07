@@ -54,6 +54,13 @@ _check = [BTC_start_location_selected, [100,100,0,false], [str (btc_enemy_side),
 //Locations
 //Pick user location
 call btc_fnc_mission_initLocations;
+/*
+	edit the functions to support:
+		- custom locations
+			(maps locations + custom locations)
+		- fixed mission locations
+			(fixed locations only)
+*/
 
 btc_locs_max = count btc_locs;
 btc_loc_active = objNull;
