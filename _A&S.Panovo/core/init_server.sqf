@@ -39,8 +39,8 @@ if (isNil "BTC_can_load_game" || BTC_load == 0) then
 {
 	switch (true) do
 	{
-		case (BTC_base_location == 100) :{BTC_start_location_selected = getMarkerPos (BTC_starts_location select (round (random ((count BTC_starts_location) - 1))));publicVariable "BTC_start_location_selected";};
-		case (BTC_base_location != 100) :{BTC_start_location_selected = getMarkerPos (BTC_starts_location select BTC_base_location);publicVariable "BTC_start_location_selected";};
+		case (BTC_base_location == 100) :{BTC_start_location_selected = getMarkerPos (btc_startLocations select (round (random ((count btc_startLocations) - 1))));publicVariable "BTC_start_location_selected";};
+		case (BTC_base_location != 100) :{BTC_start_location_selected = getMarkerPos (btc_startLocations select BTC_base_location);publicVariable "BTC_start_location_selected";};
 	};
 };
 "respawn_west" setMarkerPos BTC_start_location_selected;
@@ -50,6 +50,13 @@ if (isNil "BTC_can_load_game" || BTC_load == 0) then {[BTC_start_location_select
 _check = [BTC_start_location_selected, [100,100,0,false], [str (btc_enemy_side), "PRESENT", true], ["this", "{_x setDamage 1;} foreach thisList", ""]] spawn BTC_create_trigger;
 */
 
+if (btc_startLocationID > 99) then {
+	btc_marker_respawn setMarkerPos (getMarkerPos (selectRandom btc_startLocations));
+} else {
+	btc_marker_respawn setMarkerPos (getMarkerPos (btc_startLocations select btc_startLocationID));
+};
+
+call btc_fnc_mission_createBase;
 
 //Locations
 //Pick user location
@@ -64,9 +71,14 @@ call btc_fnc_mission_initLocations;
 
 btc_locs_max = count btc_locs;
 btc_loc_active = objNull;
+btc_loc_prev = objNull;
 btc_locs_captured = 0;
 
 [] call btc_fnc_mission_assignLocation;
+
+//Dynamic groups
+if (btc_dynamicGroups) then {["Initialize"] call BIS_fnc_dynamicGroups;};
+
 /*
 
 

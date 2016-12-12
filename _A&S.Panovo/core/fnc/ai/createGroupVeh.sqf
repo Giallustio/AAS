@@ -27,7 +27,7 @@ if (_gunner > 0) then {btc_type_crewmen createUnit [_spawn_zone, _group, "this m
 if (_commander > 0) then {btc_type_crewmen createUnit [_spawn_zone, _group, "this moveinCommander _veh;this assignAsCommander _veh;"];};
 if (_cargo > 0) then {
 	for "_i" from 0 to _cargo do {
-		_unit_type = btc_type_units select (round (random ((count btc_type_units) - 1)));
+		_unit_type = selectRandom btc_type_units;
 		_unit_type createUnit [_spawn_zone, _group, "this moveinCargo _veh;this assignAsCargo _veh;"];
 	};
 };

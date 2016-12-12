@@ -1,0 +1,1 @@
+(_this select 0) addAction ["<t color='#ff1111'>Arsenal</t>", "['Open',true] spawn BIS_fnc_arsenal;"];

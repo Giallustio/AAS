@@ -33,7 +33,7 @@ _wp_type = selectRandom _wps_type;
 
 switch (_wp_type) do {
 	case "PATROL" : {
-		[_group, _spawn_zone, _r_patrol] spawn btc_fnc_ai_taskPatrol;
+		[_group, _spawn_zone, _r_patrol, "SAFE"] spawn btc_fnc_ai_taskPatrol;
 	};
 	case "GUARD": {
 		_wp = _group addWaypoint [_spawn_zone, 0];

@@ -78,5 +78,10 @@ if (side player != BTC_player_side) then
 	};
 };
 */
+if (!btc_debug) then {removeAllWeapons player};
+player setPos getMarkerPos btc_marker_respawn;
+//Dynamic groups
+if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
+
 //Debug
 if (btc_debug) then {player allowDamage false;onMapSingleClick "player setpos _pos";btc_marker_debug_cond = true;_marker = [] spawn btc_fnc_markerDebug;};
