@@ -47,8 +47,8 @@ for "_i" from 1 to _fant do {
 	_wps = random 1;
 	switch (true) do {
 		case (_wps < 0.2)               : {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["PATROL","GUARD"]] call btc_fnc_ai_createGroupInf;};
-		case (_wps >= 0.2 && _wps < 0.45): {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["GUARD"]] call btc_fnc_ai_createGroupInf;};
-		case (_wps >= 0.45)              : {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["PATROL"]] call btc_fnc_ai_createGroupInf;};
+		case (_wps >= 0.2 && _wps < 0.35): {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["GUARD"]] call btc_fnc_ai_createGroupInf;};
+		case (_wps >= 0.35)              : {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["PATROL"]] call btc_fnc_ai_createGroupInf;};
 	};
 };
 
