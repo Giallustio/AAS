@@ -11,6 +11,73 @@ _return = [_pos,"Mortar"] call btc_fnc_mission_createFortification;
 //If iskindof statics then mortar
 
 //_return
+
+/*
+might be useful
+[quote name='Larrow']Trouble with that script from TacticalGamer is that it is only setup to spot playableunits (players or AI in a player slot).
+
+Ive made a quick rewrite of the script , you can now pass it the Spotter and an array of artillery units. ( I was bored and seemed like something interesting to do for an hour)
+Side to attack is automatically anyone that is unfriendly to the spotter.
+Spotted units can be any unit not just players
+Placed a few checks in the script to make sure spotter is a man and that artillery units are artillery units :/
+Could be taken further allowing specifying number of rounds and firing/reload delays.
+
+[php]//////////////////////////////////
+// _nul = [ UNIT, [mortar1, mortar2] ] exeVM "mortar_spotter.sqf;
+//
+// UNIT - a valid unit to serve as the artillery spotter
+// [mortar1, .. ] - an array of artillary units
+//////////////////
+//Rewritten from original concept by Unkl on the TacticalGamer forum http://www.tacticalgamer.com/script-bin/194107-arma-3-enemy-mortar-team-script.html
+/////
+
+private ["_spotter","_mortars","_sideToAttack","_targets"];
+
+_spotter = [_this, 0, objNull, [objNull] ] call BIS_fnc_param;
+_mortars = [_this, 1, [], [[]] ] call BIS_fnc_param;
+
+if ( isNull _spotter || { !((typeOf _spotter) isKindOf "MAN") } ) then { "You must supply a unit for the spotter" call BIS_fnc_error; };
+if ( count _mortars < 1 ) then { "You must supply atleast one mortar" call BIS_fnc_error; };
+{
+if ( !( "Artillery" in (getArray (configfile >> "CfgVehicles" >> typeOf _x >> "availableForSupportTypes")) ) ) then {
+(format ["Mortar %1 is not a valid Artillary support unit",_forEachIndex]) call BIS_fnc_error;
+};
+}forEach _mortars;
+
+_sideToAttack = [];
+{
+if (_x getFriend (side _spotter) < 0.6 ) then {
+_sideToAttack set [count _sideToAttack, _x];
+};
+}forEach [opfor,west,independent];
+
+while { { alive _x; }count _mortars > 0 } do {
+
+_targets = [];
+{
+if (side _x in _sideToAttack && { alive _x && _spotter knowsAbout _x > 1 } ) then {
+_targets set [count _targets, _x];
+};
+} forEach allUnits;
+
+
+if (count _targets > 0) then {
+
+_chosenTarget = _targets select (floor (random (count _targets)));
+
+{
+if (alive _x) then {
+_x commandArtilleryFire [getPos _chosenTarget, (magazines _x) select 0, floor (random 6)+1];
+sleep 15;
+};
+}forEach _mortars;
+sleep ((floor random 30) + 45);
+
+};
+
+sleep 10;
+};
+*/
 	
 //if (btc_debug) then {diag_log format ["btc_fnc_mission_populateLocation defenders %1",_n];};
 	
