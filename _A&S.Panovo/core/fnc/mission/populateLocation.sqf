@@ -16,6 +16,11 @@ for "_i" from 0 to (3 + random 4) do {
 	[_pos,btc_fortifications] call btc_fnc_mission_createFortification;
 };
 
+if (random 1 > 0.5) then {
+	[_pos] spawn btc_fnc_ai_mortarControl;
+	if (btc_debug) then {diag_log "Spawn mortar";};
+};
+
 //DEFENDERS
 
 if (btc_enemy_ratio isEqualTo 0) then {

@@ -49,6 +49,7 @@ _newObjs = [];
 if (typeName _type isEqualTo "ARRAY") then {_type = selectrandom _type;};
 
 switch (_type) do {
+	case "Mortar" : {_newObjs = [["LIB_BM37",[0.280762,0.524414,0.0991006],0,1,0,[],"","",true,false],["Trench_Mortar",[0,0,0],0,1,0,[],"","",true,false]]};
 	case "Trench_Big" : {_newObjs = [["Trench_Big1",[0,0,0],0,1,0,[],"","",true,false]]};
 	case "Trench_Small" : {_newObjs = [["Trench_Small1",[0,0,0],0,1,0,[],"","",true,false]]};
 	case "Gun" : {_newObjs = [["Trench_Gun1",[0,0,0],0,1,0,[],"","",true,false],["LIB_Zis3",[-0.395508,0.946289,0.477712],0,1,0,[],"","",true,false]]};
