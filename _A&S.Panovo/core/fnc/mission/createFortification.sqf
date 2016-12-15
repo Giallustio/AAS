@@ -83,3 +83,5 @@ _return = [_pos, (_pos getDir btc_loc_prev) , _newObjs] call btc_fnc_objectsMapp
 		_group setCombatMode "RED";
 	};
 } foreach _return;
+
+_return

@@ -4,6 +4,8 @@ if (isServer) then {
 	btc_fnc_ai_createGroupInf = compile preprocessFile "core\fnc\ai\createGroupInf.sqf";
 	btc_fnc_ai_createGroupVeh = compile preprocessFile "core\fnc\ai\createGroupVeh.sqf";
 	btc_fnc_ai_createSniper = compile preprocessFile "core\fnc\ai\createSniper.sqf";
+	btc_fnc_ai_mortarControl = compile preprocessFile "core\fnc\ai\mortarControl.sqf";
+	btc_fnc_ai_mortarFire = compile preprocessFile "core\fnc\ai\mortarFire.sqf";
 	btc_fnc_ai_setSkill = compile preprocessFile "core\fnc\ai\setSkill.sqf";
 	btc_fnc_ai_taskPatrol = compile preprocessFile "core\fnc\ai\taskPatrol.sqf";
 

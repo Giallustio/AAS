@@ -102,9 +102,9 @@ btc_baseComposition       = [["LIB_FlagCarrier_GER",[11.6509,-8.6543,0],0,1,0,[]
 
 
 //Arty - AI
-btc_type_mortar           = "2b14_82mm_TK_EP1";
 btc_arty_dispersion       = 60;
-btc_arty_salvo            = 2;
+btc_arty_shots            = 2;
+btc_arty_ammo             = "ARTY_LIB_Sh_81_HE";
 //Arty - Player
 btc_arty_magazine           = [["HE","SMOKE","ILLUM","WP"],["ARTY_Sh_105_HE","ARTY_SmokeShellWhite","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];
 btc_arty_player_available   = true;
@@ -112,6 +112,7 @@ btc_arty_player_reload_time = 300;
 btc_arty_player_reloading   = 0;
 btc_arty_player_x           = 0;
 btc_arty_player_y           = 0;
+
 btc_enemy_men             = "SoldierEB";
 btc_friendly_men          = "SoldierWB";
 btc_flag_marker_type      = "Faction_NATO_EP1";

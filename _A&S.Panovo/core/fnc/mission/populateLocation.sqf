@@ -17,8 +17,7 @@ for "_i" from 0 to (3 + random 4) do {
 };
 
 if (random 1 > 0.5) then {
-	[_pos] spawn btc_fnc_ai_mortarControl;
-	if (btc_debug) then {diag_log "Spawn mortar";};
+	[_loc] spawn btc_fnc_ai_mortarControl;
 };
 
 //DEFENDERS
