@@ -14,6 +14,9 @@ if (count _this isEqualTo 0) then {
 	if (isNull btc_loc_active) then {btc_loc_prev = btc_baseObject;} else {btc_loc_prev = btc_loc_active;}
 };
 
+//Msg
+[(_loc getvariable ["name", "error"]),(_loc getvariable ["id", -1]),position _loc] remoteExec ["btc_fnc_mission_assignLocationCapturedNotification",0]; 
+
 _radiusx = _loc getVariable ["RadiusX",50];
 _radiusy = _loc getVariable ["RadiusY",50];
 

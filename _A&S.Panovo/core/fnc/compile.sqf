@@ -36,5 +36,6 @@ btc_fnc_addArsenal = compile preprocessFile "core\fnc\misc\addArsenal.sqf";
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
 if (!isDedicated) then {
-
+	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
+	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";
 };

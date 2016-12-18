@@ -7,8 +7,7 @@ btc_locs_captured = btc_locs_captured + 1;
 
 
 //msg
-hint format ["%1 has been captured",btc_loc_active getvariable ["name", "error"]];
-
+[(btc_loc_active getvariable ["name", "error"]),(btc_loc_active getvariable ["id", -1])] remoteExec ["btc_fnc_mission_locationCapturedNotification",0]; 
 
 //marker
 _markers = btc_loc_active getvariable ["markers", ["",""]];
