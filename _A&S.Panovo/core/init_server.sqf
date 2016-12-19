@@ -76,6 +76,8 @@ btc_locs_captured = 0;
 
 [] call btc_fnc_mission_assignLocation;
 
+addMissionEventHandler ["PlayerConnected",btc_fnc_jip];
+
 //Dynamic groups
 if (btc_dynamicGroups) then {["Initialize"] call BIS_fnc_dynamicGroups;};
 
