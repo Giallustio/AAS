@@ -83,9 +83,17 @@ player setPos getMarkerPos btc_marker_respawn;
 
 //Actions
 	//if (BTC_arty_player_def == 1 && format ["%1",player getVariable "BTC_arty_operator"] == "1") then {_action = player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>","=BTC=_addAction.sqf",[[],BTC_fnc_arty],0,false,false,"","BTC_arty_player_available"];};
-player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>","btc_fnc_actions_requestArtillery",0,0,false,false,"","true"];
+if (btc_arty) then {
+	player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>","btc_fnc_actions_requestArtillery",0,0,false,false,"","player getVariable [""btc_arty_operator"",false]"];// && is available
+};
 //Dynamic groups
 if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
 
 //Debug
-if (btc_debug) then {player allowDamage false;onMapSingleClick "player setpos _pos";btc_marker_debug_cond = true;_marker = [] spawn btc_fnc_markerDebug;};
+if (btc_debug) then {
+	player allowDamage false;
+	onMapSingleClick "player setpos _pos";
+	btc_marker_debug_cond = true;
+	[] spawn btc_fnc_markerDebug;
+	player setVariable ["btc_arty_operator",true];
+};

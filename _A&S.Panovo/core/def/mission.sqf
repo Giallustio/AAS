@@ -32,16 +32,15 @@ btc_version = 0.1;
 	btc_load            = (paramsArray select 25);
 	btc_debug           = (paramsArray select 26);
 */
-
+//Param
 btc_enemy_ratio = 2;
 btc_infantry_only = false;
 btc_startLocationID = 100;
-//Dynamic groups
 btc_dynamicGroups = true;
+btc_arty = true;
 
 btc_debug = true;
 _type_units_n = 0;
-btc_loc_radius = 150;
 /*
 btc_AI_skill = [
 	(paramsArray select 16)/10,//general
@@ -84,16 +83,19 @@ switch (btc_enemy_ratio) do {
 btc_city_bonus         = 500;
 btc_loc_blacklist      = [];
 //Var
-if (isServer) then 
-{
+if (isServer) then {
+	btc_loc_radius = 150;
 	btc_prev_city             = [];
 	btc_actual_city           = [];
 	btc_next_city             = [];
 	btc_city_array            = [];
 	btc_city_captured         = 0;
 	btc_spawn                 = [];
-	//if !(isNil "paramsArray") then {if (isServer) then {btc_money = (paramsArray select 19)};};
-	publicVariable "btc_prev_city";publicVariable "btc_actual_city";publicVariable "btc_next_city";publicVariable "btc_city_array";publicVariable "btc_city_captured";publicVariable "btc_money";publicVariable "btc_spawn";
+	
+	//Pub var
+	btc_arty_available = true;publicVariable "btc_arty_available";
+	
+	
 };
 //Mission
 btc_startLocations       = ["btc_startLocation_1","btc_startLocation_2","btc_startLocation_3","btc_startLocation_4"];
@@ -107,11 +109,10 @@ btc_arty_shots            = 2;
 btc_arty_ammo             = "ARTY_LIB_Sh_81_HE";
 //Arty - Player
 btc_arty_magazine           = [["HE","SMOKE","ILLUM","WP"],["ARTY_Sh_105_HE","ARTY_SmokeShellWhite","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];
-btc_arty_available   = true;
+btc_arty_available = true;
 btc_arty_reloadTime = 300;
-btc_arty_reloading   = 0;
-btc_arty_offsetX           = 0;
-btc_arty_offsetY           = 0;
+btc_arty_offsetX = 0;
+btc_arty_offsetY = 0;
 
 btc_enemy_men             = "SoldierEB";
 btc_friendly_men          = "SoldierWB";
