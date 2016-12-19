@@ -107,11 +107,11 @@ btc_arty_shots            = 2;
 btc_arty_ammo             = "ARTY_LIB_Sh_81_HE";
 //Arty - Player
 btc_arty_magazine           = [["HE","SMOKE","ILLUM","WP"],["ARTY_Sh_105_HE","ARTY_SmokeShellWhite","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];
-btc_arty_player_available   = true;
-btc_arty_player_reload_time = 300;
-btc_arty_player_reloading   = 0;
-btc_arty_player_x           = 0;
-btc_arty_player_y           = 0;
+btc_arty_available   = true;
+btc_arty_reloadTime = 300;
+btc_arty_reloading   = 0;
+btc_arty_offsetX           = 0;
+btc_arty_offsetY           = 0;
 
 btc_enemy_men             = "SoldierEB";
 btc_friendly_men          = "SoldierWB";

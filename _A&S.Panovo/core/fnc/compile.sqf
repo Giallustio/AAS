@@ -1,5 +1,8 @@
 /////////////////////SERVER\\\\\\\\\\\\\\\\\\\\\
 if (isServer) then {
+	//Actions
+	btc_fnc_actions_fireArtillery = compile preprocessFile "core\fnc\actions\fireArtillery.sqf";
+	
 	//AI
 	btc_fnc_ai_createGroupInf = compile preprocessFile "core\fnc\ai\createGroupInf.sqf";
 	btc_fnc_ai_createGroupVeh = compile preprocessFile "core\fnc\ai\createGroupVeh.sqf";
@@ -36,6 +39,8 @@ btc_fnc_addArsenal = compile preprocessFile "core\fnc\misc\addArsenal.sqf";
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
 if (!isDedicated) then {
+	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
+	
 	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
 	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";
 };

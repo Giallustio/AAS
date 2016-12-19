@@ -26,7 +26,7 @@ class btc_arty_dialog
 	class controls {
 		class RscText_1001: RscText
 		{
-			idc = 1001;
+			idc = -1;
 			text = "Arty type"; //--- ToDo: Localize;
 			x = 0.711406 * safezoneW + safezoneX;
 			y = 0.599 * safezoneH + safezoneY;
@@ -45,7 +45,7 @@ class btc_arty_dialog
 		};
 		class RscText_1002: RscText
 		{
-			idc = 1002;
+			idc = -1;
 			text = "N/S"; //--- ToDo: Localize;
 			x = 0.711406 * safezoneW + safezoneX;
 			y = 0.654 * safezoneH + safezoneY;
@@ -55,7 +55,7 @@ class btc_arty_dialog
 		};
 		class RscText_1003: RscText
 		{
-			idc = 1003;
+			idc = -1;
 			text = "W/E"; //--- ToDo: Localize;
 			x = 0.711406 * safezoneW + safezoneX;
 			y = 0.687 * safezoneH + safezoneY;
@@ -65,7 +65,7 @@ class btc_arty_dialog
 		};
 		class RscEdit_1400: RscEdit
 		{
-			idc = 1400;
+			idc = 2101;
 			x = 0.762969 * safezoneW + safezoneX;
 			y = 0.676 * safezoneH + safezoneY;
 			w = 0.0360937 * safezoneW;
@@ -74,7 +74,7 @@ class btc_arty_dialog
 		};
 		class RscEdit_1401: RscEdit
 		{
-			idc = 1401;
+			idc = 2102;
 			x = 0.762969 * safezoneW + safezoneX;
 			y = 0.709 * safezoneH + safezoneY;
 			w = 0.0360937 * safezoneW;
@@ -83,7 +83,7 @@ class btc_arty_dialog
 		};
 		class RscText_1004: RscText
 		{
-			idc = 1004;
+			idc = -1;
 			text = "Negative values for South and East"; //--- ToDo: Localize;
 			x = 0.711406 * safezoneW + safezoneX;
 			y = 0.731 * safezoneH + safezoneY;
@@ -98,7 +98,7 @@ class btc_arty_dialog
 			w = 0.053125 * safezoneW;
 			h = 0.022 * safezoneH;
 			text = "Confirm";
-			action = "";	
+			action = "[1] call btc_fnc_actions_requestArtillery";	
 		};
 	};
 };

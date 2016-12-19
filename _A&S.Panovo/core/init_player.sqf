@@ -80,6 +80,10 @@ if (side player != BTC_player_side) then
 */
 if (!btc_debug) then {removeAllWeapons player};
 player setPos getMarkerPos btc_marker_respawn;
+
+//Actions
+	//if (BTC_arty_player_def == 1 && format ["%1",player getVariable "BTC_arty_operator"] == "1") then {_action = player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>","=BTC=_addAction.sqf",[[],BTC_fnc_arty],0,false,false,"","BTC_arty_player_available"];};
+player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>","btc_fnc_actions_requestArtillery",0,0,false,false,"","true"];
 //Dynamic groups
 if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
 
