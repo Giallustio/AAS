@@ -13,7 +13,7 @@ _shots = 5;
 
 sleep (30 + random 10);
 
-_id = _type find (btc_arty_magazine select 0);
+_id = (btc_arty_magazine select 0) find _type;
 _mag = (btc_arty_magazine select 1) select _id;
 
 for "_i" from 1 to (_shots) do {

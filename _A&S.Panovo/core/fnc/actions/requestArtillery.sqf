@@ -18,6 +18,7 @@ switch (_this) do {
 	case 1 : {
 		//Confirm request
 		private ["_type","_x_number","_y_number","_pos","_msg"];
+		hintSilent "";
 		btc_arty_available = false;
 		_type = lbText [2100,lbCurSel 2100];
 		_x_number = ctrlText 2101;
@@ -26,9 +27,9 @@ switch (_this) do {
 		_pos = position player;
 		call compile format ["btc_arty_offsetX = %1;", _x_number];
 		call compile format ["btc_arty_offsetY = %1;", _y_number];
-		if (typeName btc_arty_offsetx != "SCALAR" || typeName btc_arty_offsetY != "SCALAR") exitWith {hint "Invalid target coordinations";};
+		if (typeName btc_arty_offsetX != "SCALAR" || typeName btc_arty_offsetY != "SCALAR") exitWith {hint "Invalid target coordinations";};
 		
-		_pos = [(_pos select 0) + btc_arty_offsetx,(_pos select 1) + btc_arty_offsetY,0];
+		_pos = [(_pos select 0) + btc_arty_offsetY,(_pos select 1) + btc_arty_offsetX,0];
 		_msg = format ["HQ, this is %1! Requesting artillery support in grid %2! Over", group player, mapGridPosition _pos];
 		[player,_msg] remoteExec ["sideChat"];
 		[_type,_pos] remoteExec ["btc_fnc_actions_fireArtillery",2];

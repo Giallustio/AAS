@@ -181,7 +181,7 @@ class RscEdit
 		"(profilenamespace getvariable ['GUI_BCG_RGB_R',0.13])",
 		"(profilenamespace getvariable ['GUI_BCG_RGB_G',0.54])",
 		"(profilenamespace getvariable ['GUI_BCG_RGB_B',0.21])",
-		1
+		0
 	};
 	autocomplete = "";
 	text = "0";
@@ -228,9 +228,9 @@ class RscCombo
 	};
 	colorText[] = 
 	{
-		1,
-		1,
-		1,
+		0,
+		0,
+		0,
 		1
 	};
 	colorBackground[] = 
@@ -238,7 +238,7 @@ class RscCombo
 		0,
 		0,
 		0,
-		1
+		0.5
 	};
 	colorScrollbar[] = 
 	{
@@ -259,7 +259,7 @@ class RscCombo
 		1,
 		1,
 		1,
-		1
+		0
 	};
 	colorPictureSelected[] = 
 	{
@@ -329,7 +329,7 @@ class RscCombo
 		1,
 		1,
 		1,
-		1
+		0
 	};
 	tooltipColorShade[] = 
 	{

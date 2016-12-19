@@ -108,7 +108,7 @@ btc_arty_dispersion       = 60;
 btc_arty_shots            = 2;
 btc_arty_ammo             = "ARTY_LIB_Sh_81_HE";
 //Arty - Player
-btc_arty_magazine           = [["HE","SMOKE","ILLUM","WP"],["ARTY_Sh_105_HE","ARTY_SmokeShellWhite","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];
+btc_arty_magazine           = [["HE","SMOKE","ILLUM","WP"],["Sh_125mm_HE","ARTY_SmokeShellWhite","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];
 btc_arty_available = true;
 btc_arty_reloadTime = 300;
 btc_arty_offsetX = 0;

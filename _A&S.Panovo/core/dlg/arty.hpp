@@ -98,7 +98,7 @@ class btc_arty_dialog
 			w = 0.053125 * safezoneW;
 			h = 0.022 * safezoneH;
 			text = "Confirm";
-			action = "[1] call btc_fnc_actions_requestArtillery";	
+			action = "1 call btc_fnc_actions_requestArtillery";	
 		};
 	};
 };
