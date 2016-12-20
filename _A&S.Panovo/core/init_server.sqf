@@ -1,7 +1,5 @@
 
-if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {BTC_ACE = true;} else {BTC_ACE = false;};
-
-if (BTC_ACE) then
+if (btc_isAce) then
 {
 
 };

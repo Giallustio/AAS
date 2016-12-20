@@ -3,6 +3,12 @@
 
 */
 btc_version = 0.1;
+
+//Mods
+
+if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {btc_isAce = true;} else {btc_isAce = false;};
+
+
 //Param
 /*
 	btc_Month           = (paramsArray select 0);
@@ -38,6 +44,9 @@ btc_infantry_only = false;
 btc_startLocationID = 100;
 btc_dynamicGroups = true;
 btc_arty = true;
+_revive = 2;
+
+if (!(btc_isAce) && _revive isEqualTo 2) then {_revive = 1;};
 
 btc_debug = true;
 _type_units_n = 0;
@@ -141,6 +150,32 @@ switch (_type_units_n) do
 		btc_type_tanks            = ["LIB_T34_76","LIB_T34_85"];
 		btc_type_apc              = ["LIB_Scout_M3","LIB_Scout_M3_FFV","LIB_SdKfz251_captured_FFV","LIB_SdKfz251_captured","LIB_SOV_M3_Halftrack"];
 		btc_type_motorized        = ["LIB_zis5v","LIB_Scout_M3","LIB_Scout_M3_FFV","LIB_SdKfz251_captured_FFV","LIB_SdKfz251_captured","LIB_SOV_M3_Halftrack","LIB_US6_Open"];
+	};
+};
+
+//Revive
+switch (_revive) do {
+	case 0: {};
+	case 1: {
+		//BI
+		missionNamespace setVariable ["bis_reviveParam_mode", 1];
+		missionNamespace setVariable ["bis_reviveParam_unconsciousStateMode", 2];
+		missionNamespace setVariable ["bis_reviveParam_requiredTrait", 0];
+		missionNamespace setVariable ["bis_reviveParam_requiredItems", 2];
+		missionNamespace setVariable ["ReviveRequiredItemsFakConsumed", 0];
+		missionNamespace setVariable ["bis_reviveParam_duration", 10];
+		missionNamespace setVariable ["bis_reviveParam_medicSpeedMultiplier", 2];
+		missionNamespace setVariable ["bis_reviveParam_forceRespawnDuration", 3];
+		missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", 300];
+	};
+	case 2: {
+		//ACE
+		ace_medical_level = 1;
+		ace_medical_enableRevive = 1;
+		ace_medical_preventInstaDeath = true;
+		ace_medical_enableFor = 1;
+		//ace_medical_enableAdvancedWounds = if ((paramsArray select 13) isEqualTo 0) then {false} else {true};
+		ace_medical_maxReviveTime = 300;
 	};
 };
 
