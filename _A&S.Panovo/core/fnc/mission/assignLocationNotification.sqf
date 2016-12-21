@@ -6,5 +6,6 @@ _pos = _this select 2;
 _task = player createSimpleTask [("Capture " + _name)];
 _task setSimpleTaskDescription [("Capture " + _name),("Capture " + _name),("Capture " + _name)];
 _task setSimpleTaskDestination _pos;
+player setCurrentTask _task;
 player setVariable [str(_id),_task];
 ["TaskAssigned",["New task assigned!",("Capture " + _name)]] call bis_fnc_showNotification;
