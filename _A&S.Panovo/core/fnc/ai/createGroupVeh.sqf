@@ -32,7 +32,7 @@ if (_cargo > 0) then {
 	};
 };
 
-_group call btc_fnc_ai_setSkill;
+if (btc_AI_setSkill) then {_group call btc_fnc_ai_setSkill;};
 
 _wp_type = selectRandom _wps_type;
 

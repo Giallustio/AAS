@@ -27,7 +27,7 @@ for "_i" from 0 to _n do {
 
 _group createUnit [btc_type_medic, _spawn_zone, [], 0, "NONE"];
 
-_group call btc_fnc_ai_setSkill;
+if (btc_AI_setSkill) then {_group call btc_fnc_ai_setSkill;};
 
 _wp_type = selectRandom _wps_type;
 

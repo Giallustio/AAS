@@ -74,7 +74,7 @@ if (btc_debug) then {diag_log format ["btc_fnc_mission_populateLocation snipers 
 	Add apc\tanks
 */
 
-if !(btc_infantry_only) then {
+if !(btc_infantryOnly) then {
 	if (btc_enemy_ratio isEqualTo 0) then {
 		_veh = round (_players / btc_enemy_ratio_veh);
 		if (_veh > 4) then {_veh = 4;};

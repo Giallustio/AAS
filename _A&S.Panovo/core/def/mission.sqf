@@ -8,73 +8,49 @@ btc_version = 0.1;
 
 if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {btc_isAce = true;} else {btc_isAce = false;};
 
+//Param
+_p_time = (paramsArray select 0);
+_p_acctime = (paramsArray select 1);
+//btc_p_load = (paramsArray select 2);
+btc_gameMode = (paramsArray select 3);
+btc_startLocationID = (paramsArray select 4);
+//btc_enemyPlayer = (paramsArray select 5);
+btc_arty = [false,true] select (paramsArray select 6);
+    //btc_p_player_arty
+    //btc_p_rallypoint
+    //btc_p_redeploy 
+    //btc_p_respawnOnTL
+	//btc_p_dynamicGroups
+btc_dynamicGroups = [false,true] select (paramsArray select 11);
+    //btc_p_recruitment
+_type_units_n = (paramsArray select 13);
+btc_enemy_ratio = (paramsArray select 14);
+btc_infantryOnly = [false,true] select (paramsArray select 15);
+//btc_p_rinf
+_revive = (paramsArray select 17);
+_p_med_level = (paramsArray select 18);
+_p_adv_wounds = [false,true] select (paramsArray select 19);
+_p_rev = (paramsArray select 20);
+btc_AI_setSkill = [false,true] select (paramsArray select 21);
 
-//Param
-/*
-	btc_Month           = (paramsArray select 0);
-	btc_Day             = (paramsArray select 1);
-	btc_Hour            = (paramsArray select 2);
-	btc_Minutes         = (paramsArray select 3);
-	btc_AI_skill        = (paramsArray select 4)/10;
-	btc_view_distance   = (paramsArray select 5);
-	btc_terrain         = (paramsArray select 6);
-	_type_units_n    = (paramsArray select 7);
-	btc_enemy_ratio     = (paramsArray select 8);
-	btc_game_mode       = (paramsArray select 9);
-	btc_base_location   = (paramsArray select 10);
-	btc_enemy_player    = (paramsArray select 11);
-	btc_arty            = (paramsArray select 12);
-	btc_arty_player_def = (paramsArray select 13);
-	btc_rinf            = (paramsArray select 14);
-	btc_marker_desc     = (paramsArray select 15);
-	btc_revive          = (paramsArray select 16);
-	btc_def_rally_point = (paramsArray select 18);
-	if (isServer) then {btc_money = (paramsArray select 19)};
-	btc_civilian        = (paramsArray select 20);
-	btc_param_ied       = (paramsArray select 21);
-	btc_logistic        = (paramsArray select 22);
-	btc_def_uav         = (paramsArray select 23);
-	btc_def_recruitment = (paramsArray select 24);
-	btc_load            = (paramsArray select 25);
-	btc_debug           = (paramsArray select 26);
-*/
-//Param
-btc_enemy_ratio = 2;
-btc_infantry_only = false;
-btc_startLocationID = 100;
-btc_dynamicGroups = true;
-btc_arty = true;
-_revive = 2;
+btc_debug = [false,true] select (paramsArray select 32);
+if !(isMultiplayer) then {btc_debug = true};
+
 
 if (!(btc_isAce) && _revive isEqualTo 2) then {_revive = 1;};
 
-btc_debug = true;
-_type_units_n = 0;
-/*
+
 btc_AI_skill = [
-	(paramsArray select 16)/10,//general
-	(paramsArray select 17)/10,//aimingAccuracy
-    (paramsArray select 18)/10,//aimingShake
-    (paramsArray select 19)/10,//aimingSpeed
-    (paramsArray select 20)/10,//endurance
-    (paramsArray select 21)/10,//spotDistance
-    (paramsArray select 22)/10,//spotTime
-    (paramsArray select 23)/10,//courage
-    (paramsArray select 24)/10,//reloadSpeed
-    (paramsArray select 25)/10//commanding
-];
-*/
-btc_AI_skill = [
-	0/10,//general
-	1/10,//aimingAccuracy
-    7/10,//aimingShake
-    2/10,//aimingSpeed
-    7/10,//endurance
-    100/10,//spotDistance
-    100/10,//spotTime
-    5/10,//courage
-    20/10,//reloadSpeed
-    80/10//commanding
+	(paramsArray select 22)/10,//general
+	(paramsArray select 23)/10,//aimingAccuracy
+    (paramsArray select 24)/10,//aimingShake
+    (paramsArray select 25)/10,//aimingSpeed
+    (paramsArray select 26)/10,//endurance
+    (paramsArray select 27)/10,//spotDistance
+    (paramsArray select 28)/10,//spotTime
+    (paramsArray select 29)/10,//courage
+    (paramsArray select 30)/10,//reloadSpeed
+    (paramsArray select 31)/10//commanding
 ];
 
 btc_player_side        = west;
@@ -93,6 +69,10 @@ btc_city_bonus         = 500;
 btc_loc_blacklist      = [];
 //Var
 if (isServer) then {
+
+	setDate [1944, 3, 25, _p_time, 0];
+	setTimeMultiplier _p_acctime;
+	
 	btc_loc_radius = 150;
 	btc_prev_city             = [];
 	btc_actual_city           = [];
@@ -166,16 +146,16 @@ switch (_revive) do {
 		missionNamespace setVariable ["bis_reviveParam_duration", 10];
 		missionNamespace setVariable ["bis_reviveParam_medicSpeedMultiplier", 2];
 		missionNamespace setVariable ["bis_reviveParam_forceRespawnDuration", 3];
-		missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", 300];
+		missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", _p_rev];
 	};
 	case 2: {
 		//ACE
-		ace_medical_level = 1;
+		ace_medical_level = _p_med_level;
 		ace_medical_enableRevive = 1;
 		ace_medical_preventInstaDeath = true;
 		ace_medical_enableFor = 1;
-		//ace_medical_enableAdvancedWounds = if ((paramsArray select 13) isEqualTo 0) then {false} else {true};
-		ace_medical_maxReviveTime = 300;
+		ace_medical_enableAdvancedWounds = _p_adv_wounds;
+		ace_medical_maxReviveTime = _p_rev;
 	};
 };
 

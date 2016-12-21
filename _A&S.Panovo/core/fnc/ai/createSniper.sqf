@@ -10,7 +10,7 @@ _pos = [_loc, _radius] call btc_fnc_randomizePos;
 _group = createGroup _side;
 _group createUnit [btc_type_sniper, _pos, [], 0, "NONE"];
 
-_group call btc_fnc_ai_setSkill;
+if (btc_AI_setSkill) then {_group call btc_fnc_ai_setSkill;};
 
 _wp = _group addWaypoint [_loc, 0];
 _wp setWaypointType "SENTRY";
