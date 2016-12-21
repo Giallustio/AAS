@@ -20,6 +20,74 @@ class Params {
         texts[]={"No","Yes"}; 
         default = 1; 
     };
+    class BTC_game_mode
+    {
+	//paramsArray[9]
+        title = "Game mode?";
+        values[] = {0, 1};
+        texts[] = {"A&S classic", "A&S random first location"};
+        default = 0;
+	};	
+    class BTC_base_location
+    {
+	//paramsArray[10]
+        title = "Base location?";
+        values[] = {0, 1, 2, 3, 4, 5, 100};
+        texts[] = {"Chaman", "Loy Manara Airport", "Rasman Airport", "Nur", "West of Tumurkalay", "Par-e Siah Oilfield", "Random"};
+        default = 100;
+	};
+	class BTC_enemy_player
+    {
+	//paramsArray[11]
+        title = "Game mode type?";
+        values[] = {0, 1, 2};
+        texts[] = {"PVE", "PVP (4:1 ratio)", "PVP (No ratio"};
+        default = 0;
+	};
+    class BTC_arty
+    {
+	//paramsArray[12]
+        title = "Enemy artillery?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class BTC_player_arty
+    {
+	//paramsArray[13]
+        title = "Artillery support?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+	};
+    class btc_p_rallypoint {
+	//paramsArray[11]
+        title = "Rally Point?";
+		values[]={0,1}; 
+		texts[]={"No","Yes"}; 
+		default = 1; 
+	};
+    class btc_p_redeploy {
+	//paramsArray[11]
+        title = "Allow re-deploy?";
+		values[]={0,1}; 
+		texts[]={"No","Yes"}; 
+		default = 1; 
+	};
+    class btc_p_redeploy {
+	//paramsArray[11]
+        title = "Respawn on TL?";
+		values[]={0,1}; 
+		texts[]={"No","Yes"}; 
+		default = 1; 
+	};
+    class BTC_recruitment {
+	//paramsArray[24]
+        title = "AI recruitment?";
+        values[] = {0, 1, 2};
+        texts[] = {"No", "Only SL", "All TLs"};
+        default = 1;
+	};
 	class btc_p_en {
 	//paramsArray[3]
         title = "Enemy type:";
@@ -27,13 +95,29 @@ class Params {
 		texts[]={"Guerrilla (A3)","CAF","AAF (A3)","RHS Insurgents"}; 
 		default = 0; 
 	};
-
-    class btc_p_redeploy {
-	//paramsArray[11]
-        title = "Allow re-deploy?";
-		values[]={0,1}; 
-		texts[]={"No","Yes"}; 
-		default = 1; 
+    class btc_p_en_ratio
+    {
+	// paramsArray[8]
+        title = "Enemy ratio?";
+        values[] = {0,1,2,3};
+        texts[] = {"Balanced","Low","Medium","High"};
+        default = 0;
+    };
+    class btc_p_en_infantryOnly
+    {
+	// paramsArray[8]
+        title = "Infantry only?";
+        values[] = {0,1};
+        texts[] = {"No","Yes"};
+        default = 0;
+    };
+    class BTC_rinf
+    {
+	//paramsArray[14]
+        title = "Enemy reinforcement?";
+        values[] = {0, 1};
+        texts[] = {"No", "Yes"};
+        default = 1;
 	};
 	class btc_p_med_sys {
 		//paramsArray[12]
