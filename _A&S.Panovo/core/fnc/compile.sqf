@@ -17,6 +17,7 @@ if (isServer) then {
 	btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
 	btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
 	btc_fnc_markerDebug = compile preprocessFile "core\fnc\misc\markerDebug.sqf";
+	btc_fnc_jip = compile preprocessFile "core\fnc\misc\jip.sqf";
 	btc_fnc_objectsMapper = compile preprocessFile "core\fnc\misc\objectsMapper.sqf";
 	btc_fnc_randomizePos = compile preprocessFile "core\fnc\misc\randomizePos.sqf";
 
