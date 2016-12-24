@@ -65,8 +65,9 @@ switch (btc_enemy_ratio) do {
 	case 3: {btc_enemy_ratio_fant = 3};
 };
 
-btc_city_bonus         = 500;
-btc_loc_blacklist      = [];
+btc_money = 99999;
+btc_bonus_city = 500;
+btc_loc_blacklist = [];
 //Var
 if (isServer) then {
 
@@ -102,6 +103,49 @@ btc_arty_available = true;
 btc_arty_reloadTime = 300;
 btc_arty_offsetX = 0;
 btc_arty_offsetY = 0;
+
+//Combat Support
+
+btc_gearObjectType = "LIB_WeaponsBox_Big_GER";
+btc_combatSupportObjectType = "LIB_Static_opelblitz_radio";
+btc_combatSupport =
+[
+	[
+		"Cars",
+		"Trucks",
+		"APC",
+		"Tanks"
+	],
+	[
+		[
+			//"Cars"
+			"LIB_Kfz1",100,
+			"LIB_Kfz1_MG42",100
+		],
+		[
+			//"Trucks"
+			"LIB_opelblitz_open_y_camo",100,
+			"LIB_opelblitz_tent_y_camo",100,
+			"LIB_opelblitz_ammo",100,
+			"LIB_opelblitz_fuel",100,
+			"LIB_opelblitz_parm",100
+		],
+		[
+			//"APC"
+			"LIB_SdKfz251",100,
+			"LIB_SdKfz_7",100,
+			"LIB_SdKfz_7_AA",100,
+			"LIB_SdKfz251_FFV",100
+
+		],
+		[
+			//"Tanks"
+			"LIB_PzKpfwIV_H",100,
+			"LIB_StuG_III_G",100,
+			"LIB_PzKpfwV",100
+		]
+	]
+];
 
 btc_enemy_men             = "SoldierEB";
 btc_friendly_men          = "SoldierWB";

@@ -11,6 +11,8 @@ if (isServer) then {
 	btc_fnc_ai_mortarFire = compile preprocessFile "core\fnc\ai\mortarFire.sqf";
 	btc_fnc_ai_setSkill = compile preprocessFile "core\fnc\ai\setSkill.sqf";
 	btc_fnc_ai_taskPatrol = compile preprocessFile "core\fnc\ai\taskPatrol.sqf";
+	
+	btc_fnc_cs_create = compile preprocessFile "core\fnc\cs\create.sqf";
 
 	//MISC
 	btc_fnc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
@@ -34,6 +36,8 @@ if (isServer) then {
 };
 /////////////////////CLIENT AND SERVER\\\\\\\\\\\\\\\\\\\\\
 
+btc_fnc_cs_addAction = compile preprocessFile "core\fnc\cs\addAction.sqf";
+
 //COMMON
 btc_fnc_addArsenal = compile preprocessFile "core\fnc\misc\addArsenal.sqf";
 
@@ -41,6 +45,8 @@ btc_fnc_addArsenal = compile preprocessFile "core\fnc\misc\addArsenal.sqf";
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
 if (!isDedicated) then {
 	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
+	
+	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";
 	
 	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
 	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";

@@ -6,6 +6,7 @@ minPlayerDistance = 100;
 
 #include "core\dlg\defines.hpp"
 #include "core\dlg\arty.hpp"
+#include "core\dlg\combatSupport.hpp"
 
 
 #include "core\def\param.hpp"
