@@ -16,7 +16,7 @@ btc_gameMode = (paramsArray select 3);
 btc_startLocationID = (paramsArray select 4);
 //btc_enemyPlayer = (paramsArray select 5);
 btc_arty = [false,true] select (paramsArray select 6);
-    //btc_p_player_arty
+btc_arty_player = [false,true] select (paramsArray select 7);
     //btc_p_rallypoint
     //btc_p_redeploy 
     //btc_p_respawnOnTL
@@ -103,6 +103,7 @@ btc_arty_available = true;
 btc_arty_reloadTime = 300;
 btc_arty_offsetX = 0;
 btc_arty_offsetY = 0;
+btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio"];
 
 //Combat Support
 
@@ -182,15 +183,24 @@ switch (_revive) do {
 	case 0: {};
 	case 1: {
 		//BI
-		missionNamespace setVariable ["bis_reviveParam_mode", 1];
-		missionNamespace setVariable ["bis_reviveParam_unconsciousStateMode", 2];
-		missionNamespace setVariable ["bis_reviveParam_requiredTrait", 0];
-		missionNamespace setVariable ["bis_reviveParam_requiredItems", 2];
-		missionNamespace setVariable ["ReviveRequiredItemsFakConsumed", 0];
-		missionNamespace setVariable ["bis_reviveParam_duration", 10];
-		missionNamespace setVariable ["bis_reviveParam_medicSpeedMultiplier", 2];
-		missionNamespace setVariable ["bis_reviveParam_forceRespawnDuration", 3];
-		missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", _p_rev];
+		//missionNamespace setVariable ["bis_reviveParam_mode", 1];
+		bis_reviveParam_mode = 1;
+		//missionNamespace setVariable ["bis_reviveParam_unconsciousStateMode", 2];
+		bis_reviveParam_unconsciousStateMode = 2;
+		//missionNamespace setVariable ["bis_reviveParam_requiredTrait", 0];
+		bis_reviveParam_requiredTrait = 0;
+		//missionNamespace setVariable ["bis_reviveParam_requiredItems", 2];
+		bis_reviveParam_requiredItems = 2;
+		//missionNamespace setVariable ["ReviveRequiredItemsFakConsumed", 0];
+		ReviveRequiredItemsFakConsumed = 0;
+		//missionNamespace setVariable ["bis_reviveParam_duration", 10];
+		bis_reviveParam_duration = 10;
+		//missionNamespace setVariable ["bis_reviveParam_medicSpeedMultiplier", 2];
+		bis_reviveParam_medicSpeedMultiplier = 2;
+		//missionNamespace setVariable ["bis_reviveParam_forceRespawnDuration", 3];
+		bis_reviveParam_forceRespawnDuration = 3;
+		//missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", _p_rev];
+		bis_reviveParam_bleedOutDuration = _p_rev;
 	};
 	case 2: {
 		//ACE

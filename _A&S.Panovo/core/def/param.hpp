@@ -15,14 +15,14 @@ class Params {
 	};
 	class btc_p_load {
     //paramsArray[2]
-        title = "Load the savegame (if available)";
+        title = "Load the savegame (if available) [NOT IMPLEMENTED YET]";
         values[]={0,1}; 
         texts[]={"No","Yes"}; 
         default = 1; 
     };
     class btc_p_gameMode {
 	//paramsArray[3]
-        title = "Game mode?";
+        title = "Game mode? [NOT IMPLEMENTED YET]";
         values[] = {0, 1};
         texts[] = {"A&S classic", "A&S random first location"};
         default = 0;
@@ -30,13 +30,13 @@ class Params {
     class btc_p_baseLocation {
 	//paramsArray[4]
         title = "Base location?";
-        values[] = {0, 1, 2, 3, 4, 5, 100};
-        texts[] = {"Chaman", "Loy Manara Airport", "Rasman Airport", "Nur", "West of Tumurkalay", "Par-e Siah Oilfield", "Random"};
+        values[] = {0, 1, 2, 3, 100};
+        texts[] = {"South\West", "North\West", "North\East", "South\East", "Random"};
         default = 100;
 	};
 	class btc_p_enemyPlayer {
 	//paramsArray[5]
-        title = "Game mode type?";
+        title = "Game mode type? [NOT IMPLEMENTED YET]";
         values[] = {0, 1, 2};
         texts[] = {"PVE", "PVP (4:1 ratio)", "PVP (No ratio"};
         default = 0;
@@ -57,21 +57,21 @@ class Params {
 	};
     class btc_p_rallypoint {
 	//paramsArray[8]
-        title = "Rally Point?";
+        title = "Rally Point? [NOT IMPLEMENTED YET]";
 		values[]={0,1}; 
 		texts[]={"No","Yes"}; 
 		default = 1; 
 	};
     class btc_p_redeploy {
 	//paramsArray[9]
-        title = "Allow re-deploy?";
+        title = "Allow re-deploy? [NOT IMPLEMENTED YET]";
 		values[]={0,1}; 
 		texts[]={"No","Yes"}; 
 		default = 1; 
 	};
     class btc_p_respawnOnTL {
 	//paramsArray[10]
-        title = "Respawn on TL?";
+        title = "Respawn on TL? [NOT IMPLEMENTED YET]";
 		values[]={0,1}; 
 		texts[]={"No","Yes"}; 
 		default = 1; 
@@ -85,9 +85,9 @@ class Params {
 	};
     class btc_p_recruitment {
 	//paramsArray[12]
-        title = "AI recruitment?";
+        title = "AI recruitment? [NOT IMPLEMENTED YET]";
         values[] = {0, 1, 2};
-        texts[] = {"No", "Only SL", "All TLs"};
+        texts[] = {"No", "Commander only", "All TLs"};
         default = 1;
 	};
 	class btc_p_en {
@@ -113,7 +113,7 @@ class Params {
     };
     class btc_p_rinf {
 	//paramsArray[16]
-        title = "Enemy reinforcement?";
+        title = "Enemy reinforcement? [NOT IMPLEMENTED YET]";
         values[] = {0, 1};
         texts[] = {"No", "Yes"};
         default = 1;

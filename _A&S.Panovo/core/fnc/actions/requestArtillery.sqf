@@ -7,6 +7,8 @@
 */
 
 
+if !(backpack player in btc_arty_radios) exitWith {hint "You need a radio to request the artillery support!"};
+
 switch (_this) do {
 	case 0 : {
 		//Open menu
