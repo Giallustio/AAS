@@ -14,3 +14,5 @@ if (isServer) then {
 if (!isDedicated) then {
 	call compile preprocessFile "core\init_player.sqf";
 };
+
+diag_log format ["Advance & Secure version: %1",btc_version];
