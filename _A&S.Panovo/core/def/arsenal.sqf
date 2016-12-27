@@ -103,6 +103,47 @@ btc_arsenal_items = [
 	"V_LIB_GER_PrivateBelt"
 ];
 
+if (btc_isAce) then {
+	switch (ace_medical_level) do {
+		case 1 : {
+			btc_arsenal_items = btc_arsenal_items + [
+				"ACE_fieldDressing",
+				"ACE_morphine",
+				"ACE_epinephrine",
+				"ACE_bloodIV",
+				"ACE_bloodIV_500",
+				"ACE_bloodIV_250",
+				"ACE_bodyBag"	
+			];		
+		};
+		case 2 : {
+			btc_arsenal_items = btc_arsenal_items + [
+				"ACE_fieldDressing",
+				"ACE_packingBandage",
+				"ACE_elasticBandage",
+				"ACE_tourniquet",
+				"ACE_morphine",
+				"ACE_adenosine",
+				"ACE_atropine",
+				"ACE_epinephrine",
+				"ACE_plasmaIV",
+				"ACE_plasmaIV_500",
+				"ACE_plasmaIV_250",
+				"ACE_salineIV",
+				"ACE_salineIV_500",
+				"ACE_salineIV_250",
+				"ACE_bloodIV",
+				"ACE_bloodIV_500",
+				"ACE_bloodIV_250",
+				"ACE_quikClot",
+				"ACE_personalAidKit",
+				"ACE_surgicalKit",
+				"ACE_bodyBag"	
+			];
+		};
+	};
+};
+
 btc_arsenal_backpacks = [
 	"B_LIB_GER_A_frame",
 	"B_LIB_GER_Radio",

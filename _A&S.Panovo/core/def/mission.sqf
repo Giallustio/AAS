@@ -2,7 +2,7 @@
 	Created by Giallustio
 
 */
-btc_version = 0.1;
+btc_version = 0.02;
 
 //Mods
 
@@ -98,7 +98,7 @@ btc_arty_dispersion       = 60;
 btc_arty_shots            = 2;
 btc_arty_ammo             = "ARTY_LIB_Sh_81_HE";
 //Arty - Player
-btc_arty_magazine           = [["HE","SMOKE","ILLUM","WP"],["Sh_125mm_HE","ARTY_SmokeShellWhite","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];
+btc_arty_magazine           = [["HE"],["Sh_125mm_HE","SmokeShellArty","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];//,"SMOKE","ILLUM","WP"
 btc_arty_available = true;
 btc_arty_reloadTime = 300;
 btc_arty_offsetX = 0;
@@ -120,30 +120,30 @@ btc_combatSupport =
 	[
 		[
 			//"Cars"
-			"LIB_Kfz1",100,
-			"LIB_Kfz1_MG42",100
+			"LIB_Kfz1",80,
+			"LIB_Kfz1_MG42",120
 		],
 		[
 			//"Trucks"
 			"LIB_opelblitz_open_y_camo",100,
 			"LIB_opelblitz_tent_y_camo",100,
-			"LIB_opelblitz_ammo",100,
-			"LIB_opelblitz_fuel",100,
-			"LIB_opelblitz_parm",100
+			"LIB_opelblitz_ammo",300,
+			"LIB_opelblitz_fuel",300,
+			"LIB_opelblitz_parm",300
 		],
 		[
 			//"APC"
-			"LIB_SdKfz251",100,
+			"LIB_SdKfz251",150,
 			"LIB_SdKfz_7",100,
-			"LIB_SdKfz_7_AA",100,
-			"LIB_SdKfz251_FFV",100
+			"LIB_SdKfz_7_AA",200,
+			"LIB_SdKfz251_FFV",150
 
 		],
 		[
 			//"Tanks"
-			"LIB_PzKpfwIV_H",100,
-			"LIB_StuG_III_G",100,
-			"LIB_PzKpfwV",100
+			"LIB_PzKpfwIV_H",1000,
+			"LIB_StuG_III_G",1000,
+			"LIB_PzKpfwV",2000
 		]
 	]
 ];
@@ -183,24 +183,15 @@ switch (_revive) do {
 	case 0: {};
 	case 1: {
 		//BI
-		//missionNamespace setVariable ["bis_reviveParam_mode", 1];
-		bis_reviveParam_mode = 1;
-		//missionNamespace setVariable ["bis_reviveParam_unconsciousStateMode", 2];
-		bis_reviveParam_unconsciousStateMode = 2;
-		//missionNamespace setVariable ["bis_reviveParam_requiredTrait", 0];
-		bis_reviveParam_requiredTrait = 0;
-		//missionNamespace setVariable ["bis_reviveParam_requiredItems", 2];
-		bis_reviveParam_requiredItems = 2;
-		//missionNamespace setVariable ["ReviveRequiredItemsFakConsumed", 0];
-		ReviveRequiredItemsFakConsumed = 0;
-		//missionNamespace setVariable ["bis_reviveParam_duration", 10];
-		bis_reviveParam_duration = 10;
-		//missionNamespace setVariable ["bis_reviveParam_medicSpeedMultiplier", 2];
-		bis_reviveParam_medicSpeedMultiplier = 2;
-		//missionNamespace setVariable ["bis_reviveParam_forceRespawnDuration", 3];
-		bis_reviveParam_forceRespawnDuration = 3;
-		//missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", _p_rev];
-		bis_reviveParam_bleedOutDuration = _p_rev;
+		missionNamespace setVariable ["bis_reviveParam_mode", 1];
+		missionNamespace setVariable ["bis_reviveParam_unconsciousStateMode", 2];
+		missionNamespace setVariable ["bis_reviveParam_requiredTrait", 0];
+		missionNamespace setVariable ["bis_reviveParam_requiredItems", 2];
+		missionNamespace setVariable ["ReviveRequiredItemsFakConsumed", 0];
+		missionNamespace setVariable ["bis_reviveParam_duration", 10];
+		missionNamespace setVariable ["bis_reviveParam_medicSpeedMultiplier", 2];
+		missionNamespace setVariable ["bis_reviveParam_forceRespawnDuration", 3];
+		missionNamespace setVariable ["bis_reviveParam_bleedOutDuration", _p_rev];
 	};
 	case 2: {
 		//ACE
@@ -210,6 +201,7 @@ switch (_revive) do {
 		ace_medical_enableFor = 1;
 		ace_medical_enableAdvancedWounds = _p_adv_wounds;
 		ace_medical_maxReviveTime = _p_rev;
+		ace_respawn_SavePreDeathGear = true;
 	};
 };
 
