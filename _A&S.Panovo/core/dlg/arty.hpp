@@ -84,7 +84,7 @@ class btc_arty_dialog
 		class RscText_1004: RscText
 		{
 			idc = -1;
-			text = "Negative values for South and East"; //--- ToDo: Localize;
+			text = "Negative values for South and West"; //--- ToDo: Localize;
 			x = 0.711406 * safezoneW + safezoneX;
 			y = 0.731 * safezoneH + safezoneY;
 			w = 0.103125 * safezoneW;
