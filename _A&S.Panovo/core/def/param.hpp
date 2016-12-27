@@ -123,7 +123,7 @@ class Params {
 		title = "Medic system";
 		values[] = {0,1,2};
 		texts[] = {"No","BI","ACE"};
-		default = 1;
+		default = 2;
 	};
 	class btc_p_med_level {
 		//paramsArray[18]

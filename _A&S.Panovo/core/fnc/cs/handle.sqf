@@ -6,13 +6,10 @@ _costId = 73;
 
 _money = btc_money;
 
-btc_combatSupportPos = [getpos player select 0,(getpos player select 1) + 8,0];
-
-
 switch (_this) do {
 	case 0 : {
 		//Open
-		if (count (nearestObjects [[btc_combatSupportPos],["All"],5]) > 1) exitWith {hint "Clear the area before create another object!"};
+		if (count (nearestObjects [btc_combatSupportPos,["All"],5]) > 1) exitWith {hint "Clear the area before create another object!"};
 
 		createDialog "btc_combatSupport_dialog";
 		2 call btc_fnc_cs_handle;
