@@ -15,11 +15,7 @@ if (isServer) then {
 	btc_fnc_cs_create = compile preprocessFile "core\fnc\cs\create.sqf";
 
 	//MISC
-	btc_fnc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
-	btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
-	btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
-	btc_fnc_markerDebug = compile preprocessFile "core\fnc\misc\markerDebug.sqf";
-	btc_fnc_jip = compile preprocessFile "core\fnc\misc\jip.sqf";
+
 	btc_fnc_objectsMapper = compile preprocessFile "core\fnc\misc\objectsMapper.sqf";
 	btc_fnc_randomizePos = compile preprocessFile "core\fnc\misc\randomizePos.sqf";
 
@@ -38,13 +34,22 @@ if (isServer) then {
 
 btc_fnc_cs_addAction = compile preprocessFile "core\fnc\cs\addAction.sqf";
 
+btc_fnc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
+btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
+btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
+btc_fnc_markerDebug = compile preprocessFile "core\fnc\misc\markerDebug.sqf";
+btc_fnc_jip = compile preprocessFile "core\fnc\misc\jip.sqf";
+
 //COMMON
-btc_fnc_addArsenal = compile preprocessFile "core\fnc\misc\addArsenal.sqf";
+btc_fnc_actions_addArsenal = compile preprocessFile "core\fnc\actions\addArsenal.sqf";
 
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
 if (!isDedicated) then {
+	btc_fnc_actions_handle = compile preprocessFile "core\fnc\actions\handle.sqf";
 	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
+	
+	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
 	
 	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";
 	
