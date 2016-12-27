@@ -79,15 +79,22 @@ if (side player != BTC_player_side) then
 };
 */
 if (!btc_debug) then {removeAllWeapons player};
-player setPos getMarkerPos btc_marker_respawn;
+[] spawn {
+	
+	waitUntil {!isNull player};
+	
+	player setPos getMarkerPos btc_marker_respawn;
+	
+	player addEventHandler ["Respawn", btc_fnc_eh_playerRespawn];
 
-//Actions
-	//if (BTC_arty_player_def == 1 && format ["%1",player getVariable "BTC_arty_operator"] == "1") then {_action = player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>","=BTC=_addAction.sqf",[[],BTC_fnc_arty],0,false,false,"","BTC_arty_player_available"];};
-if (btc_arty_player && player getVariable ["btc_arty_operator",false]) then {
-	player addaction [("<t color=""#ED2744"">") + ("Request artillery") + "</t>",{(_this select 3) call btc_fnc_actions_requestArtillery},0,0,false,false,"","btc_arty_available"];
+	//Actions
+	[] call btc_fnc_actions_handle;
+
+	//Dynamic groups
+	if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
 };
-//Dynamic groups
-if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
+
+
 
 //Debug
 if (btc_debug) then {
