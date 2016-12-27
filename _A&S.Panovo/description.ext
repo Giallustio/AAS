@@ -27,3 +27,5 @@ minPlayerDistance = 100;
 
 
 #include "core\def\param.hpp"
+
+#include "core\fnc\CfgRemoteExec.hpp"
