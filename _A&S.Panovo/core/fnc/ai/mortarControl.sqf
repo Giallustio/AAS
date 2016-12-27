@@ -26,7 +26,7 @@ while {{Alive _x} count crew _mortar > 0} do {
 			_targets_list = leader _x nearTargets 1200;
 			if ({(_x select 2) isEqualTo btc_player_side} count _targets_list > 0) then {
 				{
-					if (!_fired && {(_x select 2) isEqualTo btc_player_side} && {(count (nearestObjects [(_x select 0), [btc_enemy_men], 100]) isEqualTo 0)} && {(_x select 0) distance _mortar < 3500}) then {
+					if (!_fired && {(_x select 2) isEqualTo btc_player_side} && {(count (nearestObjects [(_x select 0), [btc_enemy_men], 100]) isEqualTo 0)} && {(_x select 0) distance _mortar < 1200} && {(_x select 0) distance (getMarkerPos btc_marker_respawn) > 300}) then {
 						if (btc_debug) then {diag_log format ["btc_fnc_ai_mortarControl get target %1 - %2",_mortar, mapGridPosition (_x select 0)];hintSilent format ["btc_fnc_ai_mortarControl get target %1 - %2",_mortar, mapGridPosition (_x select 0)];};
 						[_mortar,_x select 0] spawn btc_fnc_ai_mortarFire;
 						_fired = true;
