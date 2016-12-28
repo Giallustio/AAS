@@ -46,7 +46,7 @@ btc_fnc_actions_addArsenal = compile preprocessFile "core\fnc\actions\addArsenal
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
 if (!isDedicated) then {
-	btc_fnc_actions_handle = compile preprocessFile "core\fnc\actions\handle.sqf";
+	btc_fnc_actions_init = compile preprocessFile "core\fnc\actions\init.sqf";
 	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
 	
 	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";

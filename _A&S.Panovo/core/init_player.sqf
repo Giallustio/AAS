@@ -88,7 +88,7 @@ if (!btc_debug) then {removeAllWeapons player};
 	player addEventHandler ["Respawn", btc_fnc_eh_playerRespawn];
 
 	//Actions
-	[] call btc_fnc_actions_handle;
+	[] spawn btc_fnc_actions_init;
 
 	//Dynamic groups
 	if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};

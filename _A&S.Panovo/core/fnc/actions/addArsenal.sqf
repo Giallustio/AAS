@@ -1,1 +1,0 @@
-(_this select 0) addAction ["<t color='#ff1111'>Arsenal</t>", "[] spawn BIS_fnc_arsenal;"];

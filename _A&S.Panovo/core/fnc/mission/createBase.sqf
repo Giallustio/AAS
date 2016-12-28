@@ -18,12 +18,10 @@ btc_baseObject enableSimulation false;
 	btc_gearObject allowDamage false;
 	clearWeaponCargoGlobal btc_gearObject;
 	clearMagazineCargoGlobal btc_gearObject;
-	[btc_gearObject] remoteExec ["btc_fnc_actions_addArsenal", 0, true]; //Not -2 (SP)
 
 	btc_combatSupportObject = btc_combatSupportObjectType createVehicle [((getMarkerPos btc_marker_respawn) select 0) + 26.281,((getMarkerPos btc_marker_respawn) select 1) - 13.697,0];
 	btc_combatSupportObject allowDamage false;
 	btc_combatSupportObject setDir 62;
-	[btc_combatSupportObject] remoteExec ["btc_fnc_cs_addAction", 0, true];
 
 	btc_combatSupportPos = btc_combatSupportObject modelToWorld [12,12,0];
 	publicVariable "btc_combatSupportPos";
