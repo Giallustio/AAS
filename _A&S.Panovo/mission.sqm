@@ -295,7 +295,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="if (local this) then {player setVariable [""btc_arty_operator"",true];}";
+						init="this setVariable [""btc_arty_operator"",true];";
 						isPlayable=1;
 					};
 					id=20;
