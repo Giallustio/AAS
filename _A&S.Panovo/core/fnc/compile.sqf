@@ -39,6 +39,7 @@ btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLo
 btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
 btc_fnc_markerDebug = compile preprocessFile "core\fnc\misc\markerDebug.sqf";
 btc_fnc_jip = compile preprocessFile "core\fnc\misc\jip.sqf";
+btc_fnc_skillDebug = compile preprocessFile "core\fnc\misc\skillDebug.sqf";
 
 //COMMON
 btc_fnc_actions_addArsenal = compile preprocessFile "core\fnc\actions\addArsenal.sqf";
