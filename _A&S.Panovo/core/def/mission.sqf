@@ -2,7 +2,7 @@
 	Created by Giallustio
 
 */
-btc_version = 0.02;
+btc_version = 0.03;
 
 //Mods
 
