@@ -65,7 +65,8 @@ _return = [_pos, (_pos getDir btc_loc_prev) , _newObjs] call btc_fnc_objectsMapp
 		private ["_group","_unit"];
 		_group = createGroup btc_enemy_side;
 		_unit = _group createUnit [(selectRandom btc_type_units), getPos _x, [], 0, "NONE"];
-		_unit moveinGunner _x;_unit assignAsGunner _x;		
+		_unit moveinGunner _x;_unit assignAsGunner _x;
+		if (btc_AI_setSkill) then {_group call btc_fnc_ai_setSkill;};
 	};
 	if (count (_x buildingPos -1) > 0) then {
 		private "_group";
@@ -81,6 +82,7 @@ _return = [_pos, (_pos getDir btc_loc_prev) , _newObjs] call btc_fnc_objectsMapp
 		} foreach (_x buildingPos -1);
 		_group setBehaviour "AWARE";
 		_group setCombatMode "RED";
+		if (btc_AI_setSkill) then {_group call btc_fnc_ai_setSkill;};
 	};
 } foreach _return;
 
