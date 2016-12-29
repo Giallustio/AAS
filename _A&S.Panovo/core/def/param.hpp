@@ -172,7 +172,7 @@ class Params {
         title = "Set skill: aimingShake";
 		values[]={0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}; 
 		texts[]={"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1","2","3","4","5","6","7","8","9","10"}; 
-		default = 7; 
+		default = 2; 
 	};
     class btc_p_set_skill_aimingSpeed {
 	//paramsArray[25]
@@ -193,14 +193,14 @@ class Params {
         title = "Set skill: spotDistance";
 		values[]={0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}; 
 		texts[]={"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1","2","3","4","5","6","7","8","9","10"}; 
-		default = 100; 
+		default = 7; 
 	};
     class btc_p_set_skill_spotTime {
 	//paramsArray[28]
         title = "Set skill: spotTime";
 		values[]={0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}; 
 		texts[]={"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1","2","3","4","5","6","7","8","9","10"}; 
-		default = 100; 
+		default = 6; 
 	};
     class btc_p_set_skill_courage {
 	//paramsArray[29]
@@ -221,7 +221,7 @@ class Params {
         title = "Set skill: commanding";
 		values[]={0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100}; 
 		texts[]={"0","0.1","0.2","0.3","0.4","0.5","0.6","0.7","0.8","0.9","1","2","3","4","5","6","7","8","9","10"}; 
-		default = 80; 
+		default = 1; 
 	};
     class btc_p_debug {
 	//paramsArray[32]
