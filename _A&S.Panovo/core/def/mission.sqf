@@ -65,8 +65,6 @@ switch (btc_enemy_ratio) do {
 	case 3: {btc_enemy_ratio_fant = 3};
 };
 
-btc_money = 99999;
-btc_bonus_city = 500;
 //Var
 if (isServer) then {
 
@@ -89,7 +87,8 @@ if (isServer) then {
 	
 	//Pub var
 	btc_arty_available = true;publicVariable "btc_arty_available";
-	
+	btc_money = 5000;publicVariable "btc_money";
+	btc_bonus_city = 500;	
 	
 };
 //Mission

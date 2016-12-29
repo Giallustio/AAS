@@ -5,6 +5,7 @@ btc_locs_captured = btc_locs_captured + 1;
 //Check if finished
 //if (btc_locs_captured >= btc_locs_max) then {};
 
+btc_money = btc_money + btc_bonus_city;publicVariable "btc_money";
 
 //msg
 [(btc_loc_active getvariable ["name", "error"]),(btc_loc_active getvariable ["id", -1])] remoteExec ["btc_fnc_mission_locationCapturedNotification",0]; 
