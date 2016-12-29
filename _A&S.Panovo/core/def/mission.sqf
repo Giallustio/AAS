@@ -67,7 +67,6 @@ switch (btc_enemy_ratio) do {
 
 btc_money = 99999;
 btc_bonus_city = 500;
-btc_loc_blacklist = [];
 //Var
 if (isServer) then {
 
@@ -81,6 +80,12 @@ if (isServer) then {
 	btc_city_array            = [];
 	btc_city_captured         = 0;
 	btc_spawn                 = [];
+	
+	//GameMode
+	btc_loc_blacklist = [];	
+	btc_followOrder = false;
+	btc_customLocOnly = false;
+	btc_safeArea = 100;
 	
 	//Pub var
 	btc_arty_available = true;publicVariable "btc_arty_available";
