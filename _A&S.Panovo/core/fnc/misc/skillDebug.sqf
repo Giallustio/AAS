@@ -9,11 +9,11 @@ switch (_this) do {
 		_spotDistance = 0;
 		_spotTime = 0;
 		_courage = 0;
-		_reloadSpeed 0;
+		_reloadSpeed = 0;
 		_commanding = 0;
 		_n = 0;
 		{
-			if !(isPlayer _x) then {
+			if (!(isPlayer _x) && !(side _x isEqualTo btc_player_side)) then {
 				_general = _general + (_x skillFinal "general");
 				_aimingAccuracy = _aimingAccuracy + (_x skillFinal "aimingAccuracy");
 				_aimingShake = _aimingShake + (_x skillFinal "aimingShake");
@@ -22,7 +22,7 @@ switch (_this) do {
 				_spotDistance = _spotDistance + (_x skillFinal "spotDistance");
 				_spotTime = _spotTime + (_x skillFinal "spotTime");
 				_courage = _courage + (_x skillFinal "courage");
-				_reloadSpeed _reloadSpeed + (_x skillFinal "reloadSpeed");
+				_reloadSpeed = _reloadSpeed + (_x skillFinal "reloadSpeed");
 				_commanding = _commanding + (_x skillFinal "commanding");
 				_n = _n + 1;				
 			};
@@ -45,6 +45,7 @@ switch (_this) do {
 	case true : {
 		//Allunits
 		{
+			if (isPlayer _x || side _x isEqualTo btc_player_side) exitWith {};
 			diag_log format ["%1: general -> %2",_x, _x skillFinal "general"];
 			diag_log format ["%1: aimingAccuracy -> %2",_x, _x skillFinal "aimingAccuracy"];
 			diag_log format ["%1: aimingShake -> %2",_x, _x skillFinal "aimingShake"];
