@@ -26,6 +26,6 @@ minPlayerDistance = 100;
 #include "core\dlg\combatSupport.hpp"
 
 
-#include "core\def\param.hpp"
+#include "param.hpp"
 
 #include "core\fnc\CfgRemoteExec.hpp"
