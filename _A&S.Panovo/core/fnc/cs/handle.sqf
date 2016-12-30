@@ -51,6 +51,7 @@ switch (_this) do {
 			if (typeOf player isEqualTo btc_role_sl) then {
 				[_type, btc_combatSupportPos,0,_cost] remoteExec ["btc_fnc_cs_create", 2];
 			} else {
+				[0,player,_type,_cost] call btc_fnc_cs_handleRequest;
 				//Send request
 			};
 		} else {hint "You don't have enough money for it!"};

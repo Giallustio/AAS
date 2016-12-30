@@ -41,12 +41,14 @@ btc_fnc_skillDebug = compile preprocessFile "core\fnc\misc\skillDebug.sqf";
 
 /////////////////////CLIENT\\\\\\\\\\\\\\\\\\\\\
 if (!isDedicated) then {
+	btc_fnc_actions_addPlayerActions = compile preprocessFile "core\fnc\actions\addPlayerActions.sqf";
 	btc_fnc_actions_init = compile preprocessFile "core\fnc\actions\init.sqf";
 	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
 	
 	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
 	
 	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";
+	btc_fnc_cs_handleRequest = compile preprocessFile "core\fnc\cs\handleRequest.sqf";
 	
 	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
 	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";
