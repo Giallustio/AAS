@@ -8,22 +8,25 @@ _players = playersNumber btc_player_side;
 
 
 //FORTIFICATIONS
-
-for "_i" from 0 to (3 + random 4) do {
-	private "_pos";
-	_pos = [_loc, 300] call btc_fnc_randomizePos;
-	_pos = [_pos, 0, 100, 10, 0, 60 * (pi / 180), 0] call BIS_fnc_findSafePos;
-	[_pos,btc_fortifications] call btc_fnc_mission_createFortification;
+if (_loc getVariable ["fortifications",true]) then {
+	for "_i" from 0 to (3 + random 4) do {
+		private "_pos";
+		_pos = [_loc, 300] call btc_fnc_randomizePos;
+		_pos = [_pos, 0, 100, 10, 0, 0.6, 0] call BIS_fnc_findSafePos;
+		[_pos,btc_fortifications] call btc_fnc_mission_createFortification;
+	};
 };
 
-if (random 1 > 0.5) then {
-	[_loc] spawn btc_fnc_ai_mortarControl;
+if (btc_arty) then {
+	if (random 1 > 0.5) then {
+		[_loc] spawn btc_fnc_ai_mortarControl;
+	};
 };
 
 //DEFENDERS
 
 if (btc_enemy_ratio isEqualTo 0) then {
-	_n = (_players / 2) + (round (random 2));
+	_n = (_players / 4) + (round (random 2));
 	if (_n > 5) then {_fant = 5;};
 } else {
 	_n = floor ((random 2) + (2 * btc_enemy_ratio));
@@ -91,7 +94,7 @@ if !(btc_infantryOnly) then {
 			for "_i" from 0 to _veh do {
 				private "_pos";
 				_pos = [_loc, _radius] call btc_fnc_randomizePos;
-				[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;
+				if (random 1 > 0.88) then {[btc_enemy_side,_pos,btc_type_tanks,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;} else {[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;};
 			};
 		};	
 	} else {
@@ -99,7 +102,7 @@ if !(btc_infantryOnly) then {
 		for "_i" from 1 to _veh do {
 			private "_pos";
 			_pos = [_loc, _radius] call btc_fnc_randomizePos;
-			[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;
+			if (random 1 > 0.88) then {[btc_enemy_side,_pos,btc_type_tanks,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;} else {[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;};
 		};
 	};
 	if (btc_debug) then {diag_log format ["btc_fnc_mission_populateLocation vehicles (0.2 - 0.6) %1",_veh];};

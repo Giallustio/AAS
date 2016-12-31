@@ -17,7 +17,7 @@ switch (_this select 0) do {
 		_sl = objNull;
 		{if (typeOf _x isEqualTo btc_role_sl) then {_sl = _x}} foreach playableUnits;
 		if (isNull _sl) exitWith {
-			"No one selected the commander role. Your request can not be processed" remoteExec ["hint",owner (_this select 1)];
+			[4] remoteExec ["btc_fnc_cs_handleRequest",owner (_this select 1)];
 		};
 		private ["_asker","_type","_cost"];
 		_asker = _this select 1;
@@ -26,13 +26,15 @@ switch (_this select 0) do {
 		[2,_asker,_type,_cost] remoteExec ["hint",owner _sl];
 	};
 	case 2 : {
-		private ["_asker","_type","_cost","_time"];
+		private ["_asker","_type","_cost","_text","_time"];
 		
 		_asker = _this select 1;
 		_type = _this select 2;
 		_cost = _this select 3;
 		
-		hint format ["%1 requested a %2. It costs %3 $. Use your scroll wheel actions to accept/refuse his request",name _asker,(getText (configFile >> "cfgVehicles" >> _type >> "displayName")),_money];
+		_text = format ["%1 requested a %2. It costs %3 $. Use your scroll wheel actions to accept/refuse his request",name _asker,(getText (configFile >> "cfgVehicles" >> _type >> "displayName")),_money];
+		hint _text;
+		["TaskAssigned",["",_text]] call bis_fnc_showNotification;
 		
 		_time = time + 120;
 		
@@ -54,6 +56,10 @@ switch (_this select 0) do {
 	};
 	case 3 : {
 		if (_this select 1) then {hint "Your request has been accepted!"} else {hint "Your request has been refused!";};
+		btc_cs_isRequestPending = nil;
+	};
+	case 4 : {
+		hint "No one selected the commander role. Your request can not be processed";
 		btc_cs_isRequestPending = nil;
 	};
 };

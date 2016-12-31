@@ -5,7 +5,7 @@ btc_arsenal_weapons = [
 	"LIB_FLARE_PISTOL",
 	"LIB_MP40",
 	"LIB_K98",
-	"LIB_K98ZF39",
+	//"LIB_K98ZF39",
 	"LIB_MP44",
 	"LIB_G43",
 	"LIB_MG42",

@@ -32,6 +32,8 @@ if (isServer) then {
 };
 /////////////////////CLIENT AND SERVER\\\\\\\\\\\\\\\\\\\\\
 
+btc_fnc_cs_handleRequest = compile preprocessFile "core\fnc\cs\handleRequest.sqf";
+
 btc_fnc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
 btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
 btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
@@ -48,7 +50,6 @@ if (!isDedicated) then {
 	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
 	
 	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";
-	btc_fnc_cs_handleRequest = compile preprocessFile "core\fnc\cs\handleRequest.sqf";
 	
 	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
 	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";

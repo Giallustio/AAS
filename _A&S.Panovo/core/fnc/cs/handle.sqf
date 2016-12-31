@@ -11,6 +11,12 @@ switch (_this) do {
 		//Open
 		if (count (nearestObjects [btc_combatSupportPos,["All"],5]) > 1) exitWith {hint "Clear the area before create another object!"};
 
+		_cam = "camera" camCreate (player modelToWorld [0,0,3]);
+		showCinemaBorder false;
+		_cam camSetTarget btc_combatSupportPos;
+		_cam cameraEffect ["internal", "back"];
+		_cam camCommit 0;
+		
 		createDialog "btc_combatSupport_dialog";
 		2 call btc_fnc_cs_handle;
 		
@@ -32,6 +38,8 @@ switch (_this) do {
 			sleep 0.1;
 		};
 		deleteVehicle _new;
+		_cam cameraEffect ["terminate","back"];
+		camDestroy _cam;
 	};
 	case 1 : {
 		//Confirm

@@ -34,7 +34,8 @@ if !(btc_customLocOnly) then {
 			_city setVariable ["name",_name];
 			_city setVariable ["RadiusX",_radius_x];
 			_city setVariable ["RadiusY",_radius_y];
-			
+			_city setVariable ["allHouses",false];
+			_city setVariable ["fortifications",true];
 
 			btc_locs set [_id,_city];
 

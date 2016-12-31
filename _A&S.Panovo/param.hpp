@@ -102,7 +102,7 @@ class Params {
         title = "Enemy ratio?";
         values[] = {0,1,2,3};
         texts[] = {"Balanced","Low","Medium","High"};
-        default = 0;
+        default = 2;
     };
     class btc_p_en_infantryOnly {
 	// paramsArray[15]

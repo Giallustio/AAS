@@ -1,5 +1,5 @@
 
-sleep 1;//Avoid initialization problems
+sleep 2;//Avoid initialization problems
 
 [] call btc_fnc_actions_addPlayerActions;
 

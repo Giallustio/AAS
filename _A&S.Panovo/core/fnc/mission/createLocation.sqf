@@ -6,6 +6,8 @@ _type = _this select 1;
 _name = _this select 2;
 _radius_x = _this select 3;
 _radius_y = _this select 4;
+_allHouses = _this select 5;
+_fortifications = _this select 6;
 
 _id = count btc_locs;
 
@@ -18,6 +20,8 @@ _city setVariable ["captured",false];
 _city setVariable ["name",_name];
 _city setVariable ["RadiusX",_radius_x];
 _city setVariable ["RadiusY",_radius_y];
+_city setVariable ["allHouses",_allHouses];
+_city setVariable ["fortifications",_fortifications];
 
 btc_locs set [_id,_city];
 
