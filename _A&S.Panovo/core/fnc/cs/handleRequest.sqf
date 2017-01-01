@@ -23,7 +23,7 @@ switch (_this select 0) do {
 		_asker = _this select 1;
 		_type = _this select 2;
 		_cost = _this select 3;
-		[2,_asker,_type,_cost] remoteExec ["hint",owner _sl];
+		[2,_asker,_type,_cost] remoteExec ["btc_fnc_cs_handleRequest",owner _sl];
 	};
 	case 2 : {
 		private ["_asker","_type","_cost","_text","_time"];
@@ -32,11 +32,16 @@ switch (_this select 0) do {
 		_type = _this select 2;
 		_cost = _this select 3;
 		
-		_text = format ["%1 requested a %2. It costs %3 $. Use your scroll wheel actions to accept/refuse his request",name _asker,(getText (configFile >> "cfgVehicles" >> _type >> "displayName")),_money];
+		_text = format ["%1 requested a %2. It costs %3 $. Use your scroll wheel actions to accept/refuse his request",name _asker,(getText (configFile >> "cfgVehicles" >> _type >> "displayName")),_cost];
 		hint _text;
 		["TaskAssigned",["",_text]] call bis_fnc_showNotification;
 		
 		_time = time + 120;
+
+		_id_1 = player addaction [("<t color=""#ED2744"">") + ("Accept") + "</t>",{btc_cs_request = true;}];
+		_id_2 = player addaction [("<t color=""#ED2744"">") + ("Refuse") + "</t>",{btc_cs_request = false;}];
+		player setVariable ["cs_action_1",_id_1];
+		player setVariable ["cs_action_2",_id_2];
 		
 		waitUntil {!(isNil "btc_cs_request") || time > _time};
 
@@ -63,3 +68,4 @@ switch (_this select 0) do {
 		btc_cs_isRequestPending = nil;
 	};
 };
+
