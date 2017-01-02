@@ -1,5 +1,5 @@
 
-if (!btc_debug) then {removeAllWeapons player};
+//if (!btc_debug) then {removeAllWeapons player};
 [] spawn {
 	
 	waitUntil {!isNull player};
