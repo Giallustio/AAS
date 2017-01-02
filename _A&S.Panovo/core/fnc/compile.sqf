@@ -24,6 +24,8 @@ if (isServer) then {
 	btc_fnc_mission_createBase = compile preprocessFile "core\fnc\mission\createBase.sqf";
 	btc_fnc_mission_createFortification = compile preprocessFile "core\fnc\mission\createFortification.sqf";
 	btc_fnc_mission_createLocation = compile preprocessFile "core\fnc\mission\createLocation.sqf";
+	btc_fnc_mission_fillHouses = compile preprocessFile "core\fnc\mission\fillHouses.sqf";
+	btc_fnc_mission_getHouses = compile preprocessFile "core\fnc\mission\getHouses.sqf";
 	btc_fnc_mission_getNearestLocation = compile preprocessFile "core\fnc\mission\getNearestLocation.sqf";
 	btc_fnc_mission_initLocations = compile preprocessFile "core\fnc\mission\initLocations.sqf";
 	btc_fnc_mission_locationCaptured = compile preprocessFile "core\fnc\mission\locationCaptured.sqf";
