@@ -6,6 +6,8 @@ _veh = 0;
 
 _players = playersNumber btc_player_side;
 
+//Fill houses
+[_loc,_radius] call btc_fnc_mission_fillHouses;
 
 //FORTIFICATIONS
 if (_loc getVariable ["fortifications",true]) then {

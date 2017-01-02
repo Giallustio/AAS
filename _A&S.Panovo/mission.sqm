@@ -115,19 +115,20 @@ class Mission
 		class Item1
 		{
 			dataType="Marker";
-			position[]={370.39221,46.821228,181.19202};
+			position[]={570.80127,50.009766,430.74982};
 			name="btc_startLocation_1";
 			type="Empty";
 			id=11;
+			atlOffset=-2.9235992;
 		};
 		class Item2
 		{
 			dataType="Marker";
-			position[]={345.58832,-8.7179756,4768.7578};
+			position[]={922.44067,-8.7179756,4153.3213};
 			name="btc_startLocation_2";
 			type="Empty";
 			id=12;
-			atlOffset=-37.200401;
+			atlOffset=-47.767033;
 		};
 		class Item3
 		{
