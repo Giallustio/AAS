@@ -7,6 +7,9 @@ btc_version = 0.03;
 //Mods
 
 if (isClass(configFile >> "cfgPatches" >> "ace_main")) then {btc_isAce = true;} else {btc_isAce = false;};
+if (isClass(configFile >> "cfgPatches" >> "task_force_radio")) then {
+	TF_give_microdagr_to_soldier = false;
+};
 
 //Param
 _p_time = (paramsArray select 0);
@@ -110,7 +113,7 @@ btc_arty_available = true;
 btc_arty_reloadTime = 300;
 btc_arty_offsetX = 0;
 btc_arty_offsetY = 0;
-btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio"];
+btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio","B_LIB_US_Radio"];
 
 //Combat Support
 
