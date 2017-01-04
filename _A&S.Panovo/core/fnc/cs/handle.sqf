@@ -44,8 +44,6 @@ switch (_this) do {
 	case 1 : {
 		//Confirm
 
-		_type = lbData [_subClassId, lbCurSel _subClassId];
-
 		_mainClassName = lbText [_mainClassId,lbCurSel _mainClassId];
 		_type = lbData [_subClassId, lbCurSel _subClassId];
 		_id = (btc_combatSupport select 0) find _mainClassName;

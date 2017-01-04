@@ -117,6 +117,10 @@ btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio","B_LIB_US_Radio"];
 
 //Combat Support
 
+btc_recruitableAI = [
+	"type",50
+];
+
 btc_gearObjectType = "LIB_WeaponsBox_Big_GER";
 btc_combatSupportObjectType = "LIB_Static_opelblitz_radio";
 btc_combatSupport =
