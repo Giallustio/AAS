@@ -42,6 +42,8 @@ if !(isMultiplayer) then {btc_debug = true};
 
 if (!(btc_isAce) && _revive isEqualTo 2) then {_revive = 1;};
 
+//ADD TO Param
+_recruitableAI = 2;
 
 btc_AI_skill = [
 	(paramsArray select 22)/10,//general
@@ -116,8 +118,9 @@ btc_arty_offsetY = 0;
 btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio","B_LIB_US_Radio"];
 
 //Combat Support
-
-btc_recruitableAI = [
+btc_recruitableAI_def = _recruitableAI;// 0 = no one; 1 = Commander; 2 = Sl
+btc_recruitableAI_max = 10;
+btc_recruitableAI_type = [
 	"type",50
 ];
 
