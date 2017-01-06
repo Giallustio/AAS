@@ -25,7 +25,7 @@ btc_arty_player = [false,true] select (paramsArray select 7);
     //btc_p_respawnOnTL
 	//btc_p_dynamicGroups
 btc_dynamicGroups = [false,true] select (paramsArray select 11);
-    //btc_p_recruitment
+_recruitableAI = (paramsArray select 12);
 _type_units_n = (paramsArray select 13);
 btc_enemy_ratio = (paramsArray select 14);
 btc_infantryOnly = [false,true] select (paramsArray select 15);
