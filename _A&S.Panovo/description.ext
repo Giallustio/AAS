@@ -21,10 +21,7 @@ corpseManagerMode = 1;
 //wreckManagerMode = 1;
 minPlayerDistance = 100;
 
-#include "core\dlg\defines.hpp"
-#include "core\dlg\arty.hpp"
-#include "core\dlg\combatSupport.hpp"
-
+#include "core\dlg\init.hpp"
 
 #include "param.hpp"
 

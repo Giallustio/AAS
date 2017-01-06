@@ -85,7 +85,7 @@ class Params {
 	};
     class btc_p_recruitment {
 	//paramsArray[12]
-        title = "AI recruitment? [NOT IMPLEMENTED YET]";
+        title = "AI recruitment?";
         values[] = {0, 1, 2};
         texts[] = {"No", "Commander only", "All TLs"};
         default = 1;
