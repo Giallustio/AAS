@@ -6,6 +6,7 @@
 	
 	player setPos getMarkerPos btc_marker_respawn;
 	
+	player addEventHandler ["Killed", btc_fnc_eh_playerKilled];
 	player addEventHandler ["Respawn", btc_fnc_eh_playerRespawn];
 
 	//Actions

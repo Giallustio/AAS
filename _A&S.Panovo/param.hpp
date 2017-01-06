@@ -55,9 +55,9 @@ class Params {
         texts[] = {"No", "Yes"};
         default = 1;
 	};
-    class btc_p_rallypoint {
+    class btc_p_mobileRespawn {
 	//paramsArray[8]
-        title = "Rally Point? [NOT IMPLEMENTED YET]";
+        title = "Mobile respawn?";
 		values[]={0,1}; 
 		texts[]={"No","Yes"}; 
 		default = 1; 
@@ -71,7 +71,7 @@ class Params {
 	};
     class btc_p_respawnOnTL {
 	//paramsArray[10]
-        title = "Respawn on TL? [NOT IMPLEMENTED YET]";
+        title = "Respawn on TL?";
 		values[]={0,1}; 
 		texts[]={"No","Yes"}; 
 		default = 1; 

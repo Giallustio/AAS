@@ -31,6 +31,10 @@ if (isServer) then {
 	btc_fnc_mission_locationCaptured = compile preprocessFile "core\fnc\mission\locationCaptured.sqf";
 	btc_fnc_mission_populateLocation = compile preprocessFile "core\fnc\mission\populateLocation.sqf";
 	
+	//Respawn
+	btc_fnc_respawn_init = compile preprocessFile "core\fnc\respawn\init.sqf";
+	btc_fnc_respawn_mobileKilled = compile preprocessFile "core\fnc\respawn\mobileKilled.sqf";
+	
 };
 /////////////////////CLIENT AND SERVER\\\\\\\\\\\\\\\\\\\\\
 
@@ -49,6 +53,7 @@ if (!isDedicated) then {
 	btc_fnc_actions_init = compile preprocessFile "core\fnc\actions\init.sqf";
 	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
 	
+	btc_fnc_eh_playerKilled = compile preprocessFile "core\fnc\eh\playerKilled.sqf";
 	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
 	
 	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";

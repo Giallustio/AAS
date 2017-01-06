@@ -20,10 +20,9 @@ btc_startLocationID = (paramsArray select 4);
 //btc_enemyPlayer = (paramsArray select 5);
 btc_arty = [false,true] select (paramsArray select 6);
 btc_arty_player = [false,true] select (paramsArray select 7);
-    //btc_p_rallypoint
+btc_respawn_mobile = [false,true] select (paramsArray select 8);
     //btc_p_redeploy 
-    //btc_p_respawnOnTL
-	//btc_p_dynamicGroups
+btc_respawn_onTL = [false,true] select (paramsArray select 10);
 btc_dynamicGroups = [false,true] select (paramsArray select 11);
 _recruitableAI = (paramsArray select 12);
 _type_units_n = (paramsArray select 13);
@@ -117,6 +116,9 @@ btc_arty_offsetX = 0;
 btc_arty_offsetY = 0;
 btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio","B_LIB_US_Radio"];
 
+//Respawn
+btc_respawn_mobileType = "LIB_opelblitz_tent_y_camo";
+
 //Combat Support
 btc_recruitableAI_def = _recruitableAI;// 0 = no one; 1 = Commander; 2 = Sl
 btc_recruitableAI_max = 10;
@@ -148,7 +150,6 @@ btc_combatSupport =
 		[
 			//"Trucks"
 			"LIB_opelblitz_open_y_camo",100,
-			"LIB_opelblitz_tent_y_camo",100,
 			"LIB_opelblitz_ammo",300,
 			"LIB_opelblitz_fuel",300,
 			"LIB_opelblitz_parm",300
