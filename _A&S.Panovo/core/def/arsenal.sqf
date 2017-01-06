@@ -104,6 +104,7 @@ btc_arsenal_items = [
 ];
 
 if (btc_isAce) then {
+	btc_arsenal_items = btc_arsenal_items + ["ACE_Earplugs"];
 	switch (ace_medical_level) do {
 		case 1 : {
 			btc_arsenal_items = btc_arsenal_items + [
