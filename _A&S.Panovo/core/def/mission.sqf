@@ -121,7 +121,12 @@ btc_arty_radios = ["B_LIB_GER_Radio","B_LIB_SOV_RA_Radio","B_LIB_US_Radio"];
 btc_recruitableAI_def = _recruitableAI;// 0 = no one; 1 = Commander; 2 = Sl
 btc_recruitableAI_max = 10;
 btc_recruitableAI_type = [
-	"type",50
+	"LIB_GER_rifleman",20,
+	"LIB_GER_AT_soldier",100,
+	"LIB_GER_stggunner",60,
+	"LIB_GER_mgunner",100,
+	"LIB_GER_scout_sniper",200,
+	"LIB_GER_medic",50
 ];
 
 btc_gearObjectType = "LIB_WeaponsBox_Big_GER";

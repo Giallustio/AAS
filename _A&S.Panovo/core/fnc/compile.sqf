@@ -52,6 +52,7 @@ if (!isDedicated) then {
 	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
 	
 	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";
+	btc_fnc_cs_handleAI = compile preprocessFile "core\fnc\cs\handleAI.sqf";
 	
 	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
 	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";

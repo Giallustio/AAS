@@ -1,9 +1,9 @@
 
+private ["_subClassId","_moneyId","_costId"];
+
 _subClassId = 71;
 _moneyId = 72;
 _costId = 73;
-
-_money = btc_money;
 
 switch (_this) do {
 	case 0 : {
@@ -12,11 +12,12 @@ switch (_this) do {
 		createDialog "btc_combatSupportAI_dialog";
 		2 call btc_fnc_cs_handleAI;
 		
-		ctrlSetText [_moneyId, format ["Budget: %1 $", _money]];
+		ctrlSetText [_moneyId, format ["Budget: %1 $", btc_money]];
 
 	};
 	case 1 : {
 		//Confirm
+		private ["_type","_id_sub","_cost"];
 
 		_type = lbData [_subClassId, lbCurSel _subClassId];
 
@@ -25,9 +26,13 @@ switch (_this) do {
 		
 		if (btc_money >= _cost) then {		
 			//closeDialog 0;
+			private "_display";
 			_type createUnit [getMarkerPos btc_marker_respawn, group player];
 			_display = getText (configFile >> "cfgVehicles" >> _type >> "displayName");
 			hint format ["You have recruited a %1 at %2 $",_display,_cost];
+			
+			btc_money = btc_money - _cost;publicVariable "btc_money";
+			ctrlSetText [_moneyId, format ["Budget: %1 $", btc_money]];
 			
 			if ({!isPlayer _x} count units (group player) > btc_recruitableAI_max) then {closeDialog 0};
 			//Create
@@ -54,11 +59,13 @@ switch (_this) do {
 		};
 	}; 
 	case 3 : {
+		private ["_subClassName","_id_sub","_cost"];
 		
 		_subClassName = lbData [_subClassId, lbCurSel _subClassId];
 		
 		_id_sub = (btc_recruitableAI_type find _subClassName) + 1;
 		_cost = btc_recruitableAI_type select _id_sub;
 		ctrlSetText [_costId, format ["Cost: %1 $", _cost]];
+		ctrlSetText [_moneyId, format ["Budget: %1 $", btc_money]];
 	};
 };
