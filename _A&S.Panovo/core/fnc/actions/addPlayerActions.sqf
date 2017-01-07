@@ -7,7 +7,7 @@ if ((btc_recruitableAI_def isEqualTo 1 && {typeOf player isEqualTo btc_role_sl})
 	player addaction [("<t color=""#ED2744"">") + ("Recruit AI") + "</t>",{0 call btc_fnc_cs_handleAI}];
 };
 if (btc_recruitableAI_def isEqualTo 2) then {
-	player addaction [("<t color=""#ED2744"">") + ("Recruit AI") + "</t>",{0 call btc_fnc_cs_handleAI},0,0,false,false,"","(leader group player) isEqualTo player)"];
+	player addaction [("<t color=""#ED2744"">") + ("Recruit AI") + "</t>",{0 call btc_fnc_cs_handleAI},0,0,false,false,"","((leader group player) isEqualTo player)"];
 };
 
 true
