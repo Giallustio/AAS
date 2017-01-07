@@ -71,9 +71,9 @@ class Params {
 	};
     class btc_p_respawnOnTL {
 	//paramsArray[10]
-        title = "Respawn on TL?";
-		values[]={0,1}; 
-		texts[]={"No","Yes"}; 
+        title = "Respawn on Group?";
+		values[]={0,1,2}; 
+		texts[]={"No","SL only", "All group units"}; 
 		default = 1; 
 	};
 	class btc_p_dynamicGroups {
