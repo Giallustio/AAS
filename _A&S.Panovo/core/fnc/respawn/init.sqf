@@ -4,3 +4,6 @@ if (btc_respawn_mobile) then {
 	missionNameSpace setVariable ["btc_respawn_mobile",_id];
 	btc_respawn_mobileVehicle addEventHandler ["Killed", btc_fnc_respawn_mobileKilled];
 };
+if (btc_respawn_onTL) then {
+	[btc_player_side, grpNull] call BIS_fnc_addRespawnPosition;
+};
