@@ -22,7 +22,7 @@ btc_arty = [false,true] select (paramsArray select 6);
 btc_arty_player = [false,true] select (paramsArray select 7);
 btc_respawn_mobile = [false,true] select (paramsArray select 8);
     //btc_p_redeploy 
-btc_respawn_onSL = [false,true] select (paramsArray select 10);
+btc_respawn_onSL = (paramsArray select 10);
 btc_dynamicGroups = [false,true] select (paramsArray select 11);
 _recruitableAI = (paramsArray select 12);
 _type_units_n = (paramsArray select 13);

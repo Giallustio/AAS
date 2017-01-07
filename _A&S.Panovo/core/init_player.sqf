@@ -13,7 +13,7 @@
 	[] spawn btc_fnc_actions_init;
 
 	//Dynamic groups
-	if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
+	if (btc_dynamicGroups) then {["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;};
 };
 
 
