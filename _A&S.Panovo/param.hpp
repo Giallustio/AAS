@@ -64,10 +64,10 @@ class Params {
 	};
     class btc_p_redeploy {
 	//paramsArray[9]
-        title = "Allow re-deploy? [NOT IMPLEMENTED YET]";
+        title = "Disable A3 fatigue system?";
 		values[]={0,1}; 
 		texts[]={"No","Yes"}; 
-		default = 1; 
+		default = 0; 
 	};
     class btc_p_respawnOnTL {
 	//paramsArray[10]

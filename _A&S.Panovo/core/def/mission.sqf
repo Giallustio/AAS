@@ -21,7 +21,7 @@ btc_startLocationID = (paramsArray select 4);
 btc_arty = [false,true] select (paramsArray select 6);
 btc_arty_player = [false,true] select (paramsArray select 7);
 btc_respawn_mobile = [false,true] select (paramsArray select 8);
-    //btc_p_redeploy 
+if ((paramsArray select 9) > 0) then {player enableFatigue false;};
 btc_respawn_onSL = (paramsArray select 10);
 btc_dynamicGroups = [false,true] select (paramsArray select 11);
 _recruitableAI = (paramsArray select 12);
