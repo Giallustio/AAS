@@ -1,5 +1,5 @@
 
-private ["_type","_pos","_id","_mag","_shots"];
+private ["_type","_pos","_id","_mag","_dispersion","_shots"];
 
 _type = _this select 0;
 _pos = _this select 1;
@@ -9,7 +9,7 @@ btc_arty_available = false;publicVariable "btc_arty_available";
 _dispersion = 75;
 _shots = 5;
 
-[[btc_player_side,"HQ"],"Target acquired! The battery is opening fire!"] remoteExec ["sideChat"];
+[1] remoteExec ["btc_fnc_handleChat",0];
 
 sleep (30 + random 10);
 
@@ -31,5 +31,5 @@ for "_i" from 1 to (_shots) do {
 [] spawn {
 	sleep btc_arty_reloadTime;
 	btc_arty_available = true;publicVariable "btc_arty_available";
-	[[btc_player_side,"HQ"],"Artillery is available again!"] remoteExec ["sideChat"];
+	[2] remoteExec ["btc_fnc_handleChat",0];
 };

@@ -31,6 +31,10 @@ if (isServer) then {
 	btc_fnc_mission_locationCaptured = compile preprocessFile "core\fnc\mission\locationCaptured.sqf";
 	btc_fnc_mission_populateLocation = compile preprocessFile "core\fnc\mission\populateLocation.sqf";
 	
+	//Respawn
+	btc_fnc_respawn_init = compile preprocessFile "core\fnc\respawn\init.sqf";
+	btc_fnc_respawn_mobileKilled = compile preprocessFile "core\fnc\respawn\mobileKilled.sqf";
+	
 };
 /////////////////////CLIENT AND SERVER\\\\\\\\\\\\\\\\\\\\\
 
@@ -39,6 +43,7 @@ btc_fnc_cs_handleRequest = compile preprocessFile "core\fnc\cs\handleRequest.sqf
 btc_fnc_createMarker = compile preprocessFile "core\fnc\misc\createMarker.sqf";
 btc_fnc_createMarkerLocal = compile preprocessFile "core\fnc\misc\createMarkerLocal.sqf";
 btc_fnc_createTrigger = compile preprocessFile "core\fnc\misc\createTrigger.sqf";
+btc_fnc_handleChat = compile preprocessFile "core\fnc\misc\handleChat.sqf";
 btc_fnc_markerDebug = compile preprocessFile "core\fnc\misc\markerDebug.sqf";
 btc_fnc_jip = compile preprocessFile "core\fnc\misc\jip.sqf";
 btc_fnc_skillDebug = compile preprocessFile "core\fnc\misc\skillDebug.sqf";
@@ -49,10 +54,11 @@ if (!isDedicated) then {
 	btc_fnc_actions_init = compile preprocessFile "core\fnc\actions\init.sqf";
 	btc_fnc_actions_requestArtillery = compile preprocessFile "core\fnc\actions\requestArtillery.sqf";
 	
-	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
-	
 	btc_fnc_cs_handle = compile preprocessFile "core\fnc\cs\handle.sqf";
 	btc_fnc_cs_handleAI = compile preprocessFile "core\fnc\cs\handleAI.sqf";
+	
+	btc_fnc_eh_playerKilled = compile preprocessFile "core\fnc\eh\playerKilled.sqf";
+	btc_fnc_eh_playerRespawn = compile preprocessFile "core\fnc\eh\playerRespawn.sqf";
 	
 	btc_fnc_mission_assignLocationNotification = compile preprocessFile "core\fnc\mission\assignLocationNotification.sqf";
 	btc_fnc_mission_locationCapturedNotification = compile preprocessFile "core\fnc\mission\locationCapturedNotification.sqf";

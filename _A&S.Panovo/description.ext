@@ -11,6 +11,8 @@ class Header
 	maxPlayers = 32;
 };
 
+respawnTemplates[] = {"MenuPosition"};
+
 respawn = 3;
 respawnDelay = 5;
 respawnDialog = 0;

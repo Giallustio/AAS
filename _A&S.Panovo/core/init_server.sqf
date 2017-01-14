@@ -35,3 +35,6 @@ addMissionEventHandler ["PlayerConnected",btc_fnc_jip];
 
 //Dynamic groups
 if (btc_dynamicGroups) then {["Initialize"] call BIS_fnc_dynamicGroups;};
+
+//Mobile respawn
+call btc_fnc_respawn_init;

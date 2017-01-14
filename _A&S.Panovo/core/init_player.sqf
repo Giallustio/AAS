@@ -6,13 +6,14 @@
 	
 	player setPos getMarkerPos btc_marker_respawn;
 	
+	player addEventHandler ["Killed", btc_fnc_eh_playerKilled];
 	player addEventHandler ["Respawn", btc_fnc_eh_playerRespawn];
 
 	//Actions
 	[] spawn btc_fnc_actions_init;
 
 	//Dynamic groups
-	if (btc_dynamicGroups) then {["InitializePlayer", [player]] call BIS_fnc_dynamicGroups;};
+	if (btc_dynamicGroups) then {["InitializePlayer", [player, true]] call BIS_fnc_dynamicGroups;};
 };
 
 

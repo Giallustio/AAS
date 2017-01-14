@@ -32,8 +32,7 @@ switch (_this) do {
 		if (typeName btc_arty_offsetX != "SCALAR" || typeName btc_arty_offsetY != "SCALAR") exitWith {hint "Invalid target coordinations";};
 		
 		_pos = [(_pos select 0) + btc_arty_offsetY,(_pos select 1) + btc_arty_offsetX,0];
-		_msg = format ["HQ, this is %1! Requesting artillery support in grid %2! Over", group player, mapGridPosition _pos];
-		[player,_msg] remoteExec ["sideChat"];
+		[0,player,_pos] remoteExec ["btc_fnc_handleChat",0];
 		[_type,_pos] remoteExec ["btc_fnc_actions_fireArtillery",2];
 	};
 };
