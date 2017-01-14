@@ -38,6 +38,7 @@ for "_i" from 1 to _n do
 	private "_pos";
 	_pos = [_loc, 150] call btc_fnc_randomizePos;
 	[btc_enemy_side,_pos,0,(2 * btc_enemy_ratio_fant),true,["SENTRY"]] call btc_fnc_ai_createGroupInf;
+	sleep 0.1;
 };
 
 if (btc_debug) then {diag_log format ["btc_fnc_mission_populateLocation defenders %1",_n];};
@@ -59,6 +60,7 @@ for "_i" from 1 to _fant do {
 		case (_wps >= 0.2 && _wps < 0.35): {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["GUARD"]] call btc_fnc_ai_createGroupInf;};
 		case (_wps >= 0.35)              : {[btc_enemy_side,_pos,150,(2 * btc_enemy_ratio_fant),true,["PATROL"]] call btc_fnc_ai_createGroupInf;};
 	};
+	sleep 0.1;
 };
 
 if (btc_debug) then {diag_log format ["btc_fnc_mission_populateLocation groups %1",_fant];};
@@ -90,6 +92,7 @@ if !(btc_infantryOnly) then {
 					private "_pos";
 					_pos = [_loc, _radius] call btc_fnc_randomizePos;
 					[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;
+					sleep 0.1;
 				};
 			};
 		} else {
@@ -97,6 +100,7 @@ if !(btc_infantryOnly) then {
 				private "_pos";
 				_pos = [_loc, _radius] call btc_fnc_randomizePos;
 				if (random 1 > 0.88) then {[btc_enemy_side,_pos,btc_type_tanks,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;} else {[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;};
+				sleep 0.1;
 			};
 		};	
 	} else {
@@ -105,6 +109,7 @@ if !(btc_infantryOnly) then {
 			private "_pos";
 			_pos = [_loc, _radius] call btc_fnc_randomizePos;
 			if (random 1 > 0.88) then {[btc_enemy_side,_pos,btc_type_tanks,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;} else {[btc_enemy_side,_pos,btc_type_apc,150,["PATROL","GUARD","SENTRY"]] call btc_fnc_ai_createGroupVeh;};
+			sleep 0.1;
 		};
 	};
 	if (btc_debug) then {diag_log format ["btc_fnc_mission_populateLocation vehicles (0.2 - 0.6) %1",_veh];};

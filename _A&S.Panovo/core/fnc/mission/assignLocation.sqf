@@ -32,13 +32,15 @@ _radiusy = _loc getVariable ["RadiusY",50];
 
 //Spawn units
 
-[_loc, ((_radiusx + _radiusy)/2)] call btc_fnc_mission_populateLocation;
+[_loc, ((_radiusx + _radiusy)/2)] spawn btc_fnc_mission_populateLocation;
 
 _marker_flag = [format ["flag_%1",(position _loc)], position _loc,[1,1],"ICON","mil_Flag","","ColorRed","",1] call btc_fnc_createMarker;
 _marker_circle = [format ["area_%1",(position _loc)], position _loc,[(_radiusx + btc_loc_radius),(_radiusy + btc_loc_radius)],"ELLIPSE","","","ColorRed","",0.2] call btc_fnc_createMarker;
 _loc setvariable ["markers", [_marker_flag,_marker_circle]];
 
-[position _loc, [(_radiusx + btc_loc_radius),(_radiusy + btc_loc_radius),0,false], [str (btc_enemy_side), "PRESENT", false], ["count thisList < 2", "[] call btc_fnc_mission_locationCaptured", ""]] call btc_fnc_createTrigger;
-
+[_loc,_radiusx,_radiusy] spawn {
+	sleep 5;
+	[position (_this select 0), [((_this select 1) + btc_loc_radius),((_this select 2) + btc_loc_radius),0,false], [str (btc_enemy_side), "PRESENT", false], ["count thisList < 2", "[] call btc_fnc_mission_locationCaptured", ""]] call btc_fnc_createTrigger;
+};
 
 btc_loc_active = _loc;
