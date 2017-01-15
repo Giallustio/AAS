@@ -109,7 +109,7 @@ btc_arty_dispersion       = 60;
 btc_arty_shots            = 2;
 btc_arty_ammo             = "ARTY_LIB_Sh_81_HE";
 //Arty - Player
-btc_arty_magazine           = [["HE"],["Sh_125mm_HE","SmokeShellArty","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];//,"SMOKE","ILLUM","WP"
+btc_arty_magazine           = [["HE","SMOKE"],["Sh_125mm_HE","SmokeShellArty","ARTY_Sh_105_ILLUM","ARTY_Sh_105_WP"]];//,"SMOKE","ILLUM","WP"
 btc_arty_available = true;
 btc_arty_reloadTime = 300;
 btc_arty_offsetX = 0;
@@ -139,7 +139,8 @@ btc_combatSupport =
 		"Cars",
 		"Trucks",
 		"APC",
-		"Tanks"
+		"Tanks",
+		"Ammoboxes"
 	],
 	[
 		[
@@ -167,6 +168,12 @@ btc_combatSupport =
 			"LIB_PzKpfwIV_H",1000,
 			"LIB_StuG_III_G",1000,
 			"LIB_PzKpfwV",2000
+		],
+		[
+			//"Ammoboxes"
+			"LIB_BasicAmmunitionBox_GER",30,
+			"LIB_AmmoCrate_Mortar_GER",100,
+			"LIB_AmmoCrate_Arty_GER",80
 		]
 	]
 ];
